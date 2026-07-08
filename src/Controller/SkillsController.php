@@ -8,7 +8,12 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class SkillsController extends AbstractController
 {
-    #[Route('/skills', name: 'app_skills')]
+    #[Route(
+        '/{_locale}/skills',
+        name: 'app_skills',
+        requirements: ['_locale' => 'fr|en'],
+        defaults: ['_locale' => 'fr']
+    )]
     public function index(): Response
     {
         return $this->render('skills/index.html.twig', [

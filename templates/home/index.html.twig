@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}{{ 'home.title'|trans }}{% endblock %}
 
 {% block body %}
 
@@ -9,27 +9,22 @@
     <div class="home-cards">
 
         <article class="home-card">
-            <span>Mes<br>Projets</span>
+            <span>{{ 'home.projects'|trans|raw }}</span>
             <span class="home-card-icon">🧩</span>
         </article>
 
         <article class="home-card">
-            <span>Outils<br>utilisés</span>
+            <span>{{ 'home.tools'|trans|raw }}</span>
             <span class="home-card-icon">🧰</span>
         </article>
 
         <article class="home-card">
-            <span>Mon CV</span>
+            <span>{{ 'home.cv'|trans }}</span>
             <span class="home-card-icon">📄</span>
         </article>
 
         <article class="home-card">
-            <span>
-                Mentions légales<br>
-                RGPD<br>
-                Contact
-            </span>
-
+            <span>{{ 'home.legal'|trans|raw }}</span>
             <span class="home-card-icon">⚖️</span>
         </article>
 

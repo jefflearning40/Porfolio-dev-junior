@@ -1,21 +1,70 @@
 <header class="site-header">
     <nav class="navbar">
-        <a href="{{ path('app_home') }}" class="navbar-logo">
-            <img src="{{ asset('images/logo/logo-portfolio.png') }}" alt="Logo portfolio">
+
+        <a href="{{ path('app_home', {'_locale': app.request.locale}) }}" class="navbar-logo">
+            <img src="{{ asset('images/logo_myPortfolio_blue.png') }}" alt="Logo MyPortfolio">
         </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
         <ul class="navbar-menu">
-            <li><a href="{{ path('app_home') }}">Accueil</a></li>
-            <li><a href="{{ path('app_skills') }}">Compétences</a></li>
-            <li><a href="{{ path('app_projects') }}">Mes créations</a></li>
-            <li><a href="{{ path('app_contact') }}">Contact</a></li>
-            <li><a href="{{ path('app_cv') }}">CV ▼</a></li>
-        </ul>
-       
-</ul>
+            <li>
+                <a href="{{ path('app_home', {'_locale': app.request.locale}) }}">
+                    {{ 'navbar.home'|trans }}
+                </a>
+            </li>
 
-        <a href="https://github.com/ton-profil" class="navbar-github" target="_blank">
-            <img src="{{ asset('images/icons/github.png') }}" alt="GitHub">
+            <li>
+                <a href="{{ path('app_skills', {'_locale': app.request.locale}) }}">
+                    {{ 'navbar.skills'|trans }}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('app_projects', {'_locale': app.request.locale}) }}">
+                    {{ 'navbar.projects'|trans }}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('app_contact', {'_locale': app.request.locale}) }}">
+                    {{ 'navbar.contact'|trans }}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('app_cv', {'_locale': app.request.locale}) }}">
+                    {{ 'navbar.cv'|trans }}
+                </a>
+            </li>
+
+            <li class="navbar-language">
+                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a>
+                <span>|</span>
+                <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale': 'en'})) }}">EN</a>
+            </li>
+
+            <li class="mobile-github">
+                <a href="https://github.com/jefflearning40"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+
+        <a href="https://github.com/jefflearning40"
+           class="navbar-github"
+           target="_blank"
+           rel="noopener noreferrer">
+            <img src="{{ asset('images/github.png') }}" alt="GitHub">
         </a>
+
     </nav>
 </header>

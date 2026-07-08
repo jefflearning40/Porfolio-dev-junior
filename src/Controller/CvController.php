@@ -8,11 +8,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class CvController extends AbstractController
 {
-    #[Route('/cv', name: 'app_cv')]
+    #[Route(
+        '/{_locale}/cv',
+        name: 'app_cv',
+        requirements: ['_locale' => 'fr|en'],
+        defaults: ['_locale' => 'fr']
+    )]
     public function index(): Response
     {
-        return $this->render('cv/index.html.twig', [
-            'controller_name' => 'CvController',
-        ]);
+        return $this->render('cv/index.html.twig');
     }
 }

@@ -1,0 +1,13 @@
+navbar:
+  home: Accueil
+  skills: Compétences
+  projects: Mes créations
+  contact: Contact
+  cv: CV
+
+home:
+  title: Accueil
+  projects: "Mes<br>Projets"
+  tools: "Outils<br>utilisés"
+  cv: "Mon CV"
+  legal: "Mentions légales<br>RGPD<br>Contact"

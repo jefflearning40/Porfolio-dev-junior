@@ -1,0 +1,13 @@
+navbar:
+  home: Home
+  skills: Skills
+  projects: My projects
+  contact: Contact
+  cv: Resume
+
+home:
+  title: Home
+  projects: "My<br>Projects"
+  tools: "Tools<br>used"
+  cv: "My resume"
+  legal: "Legal notice<br>GDPR<br>Contact"

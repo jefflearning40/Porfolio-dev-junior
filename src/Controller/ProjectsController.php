@@ -8,11 +8,14 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class ProjectsController extends AbstractController
 {
-    #[Route('/projects', name: 'app_projects')]
+    #[Route(
+        '/{_locale}/projects',
+        name: 'app_projects',
+        requirements: ['_locale' => 'fr|en'],
+        defaults: ['_locale' => 'fr']
+    )]
     public function index(): Response
     {
-        return $this->render('projects/index.html.twig', [
-            'controller_name' => 'ProjectsController',
-        ]);
+        return $this->render('projects/index.html.twig');
     }
 }
