@@ -1,3 +1,149 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   GÉNÉRAL
+=========================== */
+
 body {
-    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===========================
+   LAYOUT GLOBAL
+=========================== */
+
+main {
+    min-height: calc(100vh - 104px);
+}
+
+/* ===========================
+   HOME
+=========================== */
+
+.home {
+    min-height: calc(100vh - 104px);
+    background: linear-gradient(
+        to bottom,
+        #82e6ef 0%,
+        #178286 100%
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-cards {
+    width: 100%;
+    max-width: 900px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 70px;
+
+    padding: 40px;
+}
+
+.home-card {
+    min-height: 150px;
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.16);
+    border: 2px solid #1597c8;
+    border-radius: 6px;
+
+    box-shadow: 6px 7px 0 rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    font-family: monospace;
+    font-size: 2.2rem;
+    line-height: 1.4;
+    text-align: center;
+    color: #000;
+}
+
+.home-card-icon {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+
+    font-size: 2rem;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.site-footer {
+    width: 100%;
+    height: 40px;
+    background: #000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    color: #fff;
+    font-size: 13px;
+}
+
+.footer-copyright {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-links {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #fff;
+}
+
+.footer-links a:hover {
+    color: #ffd400;
+}
+
+.footer-social {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
 }

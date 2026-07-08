@@ -1,15 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio Dev Junior{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<div class="container mt-5">
-    <div class="alert alert-success">
-        Bootstrap fonctionne !
+
+<section class="home">
+
+    <div class="home-cards">
+
+        <article class="home-card">
+            <span>Mes<br>Projets</span>
+            <span class="home-card-icon">🧩</span>
+        </article>
+
+        <article class="home-card">
+            <span>Outils<br>utilisés</span>
+            <span class="home-card-icon">🧰</span>
+        </article>
+
+        <article class="home-card">
+            <span>Mon CV</span>
+            <span class="home-card-icon">📄</span>
+        </article>
+
+        <article class="home-card">
+            <span>
+                Mentions légales<br>
+                RGPD<br>
+                Contact
+            </span>
+
+            <span class="home-card-icon">⚖️</span>
+        </article>
+
     </div>
 
-    <button class="btn btn-primary">
-        Bouton Bootstrap
-    </button>
-</div>
+</section>
+
 {% endblock %}
