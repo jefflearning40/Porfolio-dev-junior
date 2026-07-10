@@ -1,0 +1,57 @@
+:root {
+
+    /* ===========================
+       COULEURS
+    =========================== */
+
+    --color-black: #000;
+    --color-dark: #111;
+    --color-white: #fff;
+
+    --color-blue: #0087d8;
+    --color-blue-light: #00bfff;
+    --color-cyan: #00d4ff;
+
+    --color-home-top: #82e6ef;
+    --color-home-bottom: #178286;
+    --color-home-border: #1597c8;
+
+    --color-grey: #777;
+    --color-yellow: #ffd400;
+
+    /* ===========================
+       DIMENSIONS
+    =========================== */
+
+    --header-height: 110px;
+    --footer-height: 40px;
+
+    --logo-height: 90px;
+    --github-size: 52px;
+
+    --github-footer-size: 30px;
+
+    /* ===========================
+       RAYONS
+    =========================== */
+
+    --radius-small: 6px;
+
+    /* ===========================
+       OMBRES
+    =========================== */
+
+    --shadow-card: 6px 7px 0 rgba(0, 0, 0, .25);
+
+    /* ===========================
+       TRANSITIONS
+    =========================== */
+
+    --transition-fast: .25s;
+    /* ===========================
+        TYPOGRAPHIE
+    =========================== */
+
+        --font-primary: Arial, sans-serif;
+        --font-code: monospace;
+        }

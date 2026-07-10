@@ -1,0 +1,64 @@
+/* ===========================
+   HOME
+=========================== */
+
+.home {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    padding: 80px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        to bottom,
+        var(--color-home-top) 0%,
+        var(--color-home-bottom) 100%
+    );
+}
+
+.home-cards {
+    width: 100%;
+    max-width: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px 80px;
+}
+
+.home-card {
+    min-height: 160px;
+    padding: 24px 80px 24px 24px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.16);
+    border: 2px solid var(--color-home-border);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-card);
+
+    color: var(--color-black);
+    font-family: var(--font-code);
+    font-size: 2.2rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.home-card-icon {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+}

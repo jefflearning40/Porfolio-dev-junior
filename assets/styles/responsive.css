@@ -1,0 +1,203 @@
+/* ===========================
+   TABLETTE
+=========================== */
+
+@media screen and (max-width: 1100px) {
+    :root {
+        --logo-height: 72px;
+        --github-size: 44px;
+    }
+
+    .navbar {
+        padding: 4px 24px 0;
+    }
+
+    .navbar-logo {
+        width: 150px;
+    }
+
+    .navbar-menu {
+        margin: 0 30px;
+    }
+
+    .navbar-menu a {
+        font-size: 16px;
+    }
+
+    .navbar-github {
+        width: 70px;
+    }
+
+    .home-cards {
+        max-width: 760px;
+        gap: 35px;
+    }
+
+    .home-card {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===========================
+   MOBILE + HAMBURGER
+=========================== */
+
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 90px;
+        --logo-height: 72px;
+    }
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .navbar-logo {
+        width: auto;
+    }
+
+    .navbar-github {
+        display: none;
+    }
+
+    .hamburger {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .hamburger span {
+        width: 36px;
+        height: 4px;
+
+        background: var(--color-blue-light);
+        border-radius: 999px;
+
+        transition:
+            transform var(--transition-fast) ease,
+            opacity var(--transition-fast) ease;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        z-index: 90;
+
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 22px 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+
+        background: var(--color-black);
+        border-top: 1px solid var(--color-blue-light);
+
+        opacity: 0;
+        pointer-events: none;
+        transform: scaleY(0);
+        transform-origin: top;
+
+        transition:
+            transform var(--transition-fast) ease,
+            opacity var(--transition-fast) ease;
+    }
+
+    .navbar-menu a {
+        color: var(--color-blue-light);
+        font-size: 1.2rem;
+    }
+
+    .navbar-language {
+        justify-content: center;
+    }
+
+    .mobile-github {
+        display: block;
+    }
+
+    .menu-toggle:checked ~ .navbar-menu {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scaleY(1);
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+
+    .home {
+        min-height: calc(
+            100vh - var(--header-height) - var(--footer-height)
+        );
+        padding: 40px 16px;
+
+        align-items: flex-start;
+    }
+
+    .home-cards {
+        max-width: 420px;
+
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .home-card {
+        min-height: 130px;
+        padding: 24px 64px 24px 20px;
+
+        font-size: 1.6rem;
+    }
+
+    .home-card-icon {
+        top: 16px;
+        right: 16px;
+
+        font-size: 1.6rem;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    :root {
+        --logo-height: 62px;
+    }
+
+    .home-card {
+        font-size: 1.35rem;
+    }
+}

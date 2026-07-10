@@ -1,0 +1,52 @@
+/* ===========================
+   FOOTER
+=========================== */
+
+.site-footer {
+    width: 100%;
+    min-height: var(--footer-height);
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: var(--color-black);
+    color: var(--color-white);
+    font-size: 13px;
+}
+
+.footer-copyright,
+.footer-links,
+.footer-social {
+    flex: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--color-white);
+}
+
+.footer-links a:hover {
+    color: var(--color-yellow);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social img {
+    width: var(--github-footer-size);
+    height: var(--github-footer-size);
+}
