@@ -3,21 +3,53 @@
 =========================== */
 
 .home {
-    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    position: relative;
+    overflow: hidden;
+
+    min-height: calc(
+        100vh - var(--header-height) - var(--footer-height)
+    );
     padding: 80px 20px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background: linear-gradient(
-        to bottom,
-        var(--color-home-top) 0%,
-        var(--color-home-bottom) 100%
-    );
 }
 
+/* ---------- Vidéo de fond ---------- */
+
+.home-video {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+/* ---------- Voile coloré ---------- */
+
+.home::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: rgba(130, 230, 239, 0.12);
+
+    pointer-events: none;
+}
+
+/* ---------- Conteneur des cartes ---------- */
+
 .home-cards {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
     max-width: 1000px;
 
@@ -26,11 +58,13 @@
     gap: 55px 80px;
 }
 
+/* ---------- Cartes ---------- */
+
 .home-card {
+    position: relative;
+
     min-height: 160px;
     padding: 24px 80px 24px 24px;
-
-    position: relative;
 
     display: flex;
     justify-content: center;
@@ -46,7 +80,24 @@
     font-size: 2.2rem;
     line-height: 1.4;
     text-align: center;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
 }
+
+/* Le bloc est EN DEHORS */
+
+.home-card:hover {
+    transform: translateY(-10px) scale(1.02);
+
+    border-color: var(--color-home-border-hover);
+
+    box-shadow: 12px 16px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Icône des cartes ---------- */
 
 .home-card-icon {
     position: absolute;

@@ -54,4 +54,10 @@
 
         --font-primary: Arial, sans-serif;
         --font-code: monospace;
+        /* ===========================
+         HOME
+         =========================== */
+
+         --color-home-border: #1597c8;
+         --color-home-border-hover: #53d8ff;
         }
