@@ -18,14 +18,18 @@ final class ProjectsController extends AbstractController
     {
         $projects = [
             [
-                'name' => 'Portfolio développeur',
-                'status' => 'En cours',
+                'name_key' => 'projects.items.portfolio.name',
+                'status_key' => 'projects.status.in_progress',
+                'description_key' => 'projects.items.portfolio.description',
+
                 'in_progress' => true,
-                'description' => 'Portfolio professionnel conçu pour présenter mes compétences, mes projets, mon CV et mon profil de développeur web.',
-                'logo' => 'images/logos/logo_myPortFolio.svg',
                 'dark_logo_background' => false,
+
+                'logo' => 'images/logos/logo_myPortFolio.svg',
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'Symfony',
@@ -49,15 +53,20 @@ final class ProjectsController extends AbstractController
                     ],
                 ],
             ],
+
             [
-                'name' => 'Shop Manager',
-                'status' => 'En cours',
+                'name_key' => 'projects.items.shop_manager.name',
+                'status_key' => 'projects.status.in_progress',
+                'description_key' => 'projects.items.shop_manager.description',
+
                 'in_progress' => true,
-                'description' => 'Application de gestion commerciale développée avec React. Elle permettra de gérer les produits, les catégories, les stocks et les commandes au sein d’une interface moderne.',
+                'dark_logo_background' => false,
+
                 'logo' => 'images/logos/logo_SM.PNG',
-                'dark_logo_background' => false,
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'React',
@@ -65,19 +74,24 @@ final class ProjectsController extends AbstractController
                     ],
                     [
                         'name' => 'Tailwind CSS',
-                        'icon' => 'images/icones/tailwind-css.svg',
+                        'icon' => 'images/icones/tailwind-css-2.3.svg',
                     ],
                 ],
             ],
+
             [
-                'name' => 'Irregular Verbs',
-                'status' => 'Terminé',
+                'name_key' => 'projects.items.irregular_verbs.name',
+                'status_key' => 'projects.status.completed',
+                'description_key' => 'projects.items.irregular_verbs.description',
+
                 'in_progress' => false,
-                'description' => 'Application pédagogique permettant d’apprendre, de réviser et de tester les verbes irréguliers anglais grâce à différents exercices interactifs.',
+                'dark_logo_background' => false,
+
                 'logo' => 'images/logos/logo_Verbe.PNG',
-                'dark_logo_background' => false,
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'HTML5',
@@ -93,15 +107,20 @@ final class ProjectsController extends AbstractController
                     ],
                 ],
             ],
+
             [
-                'name' => 'BPM',
-                'status' => 'Terminé',
+                'name_key' => 'projects.items.bpm.name',
+                'status_key' => 'projects.status.completed',
+                'description_key' => 'projects.items.bpm.description',
+
                 'in_progress' => false,
-                'description' => 'Application permettant de calculer et d’afficher les relevés de tension arterielle prise avec un tensiometre. ',
+                'dark_logo_background' => false,
+
                 'logo' => 'images/logos/logo_BPC.PNG',
-                'dark_logo_background' => false,
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'HTML5',
@@ -117,15 +136,20 @@ final class ProjectsController extends AbstractController
                     ],
                 ],
             ],
+
             [
-                'name' => 'MagScan',
-                'status' => 'Terminé',
+                'name_key' => 'projects.items.magscan.name',
+                'status_key' => 'projects.status.completed',
+                'description_key' => 'projects.items.magscan.description',
+
                 'in_progress' => false,
-                'description' => 'Projet de site vitrine réalisé pour une chaîne fictive de magasins implantés en centre-ville.',
-                'logo' => 'images/logos/logo_MS.PNG',
                 'dark_logo_background' => true,
+
+                'logo' => 'images/logos/logo_MS.PNG',
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'React',
@@ -137,15 +161,20 @@ final class ProjectsController extends AbstractController
                     ],
                 ],
             ],
+
             [
-                'name' => 'Plumbing Item',
-                'status' => 'Terminé',
+                'name_key' => 'projects.items.plumbing_item.name',
+                'status_key' => 'projects.status.completed',
+                'description_key' => 'projects.items.plumbing_item.description',
+
                 'in_progress' => false,
-                'description' => 'Application de gestion de produits de plomberie, du stock, des ventes et des statistiques.robotisé dans le futur',
-                'logo' => 'images/logos/logo_plimbing.PNG',
                 'dark_logo_background' => true,
+
+                'logo' => 'images/logos/logo_plimbing.PNG',
+
                 'github_url' => '#',
                 'website_url' => '#',
+
                 'technologies' => [
                     [
                         'name' => 'Symfony',

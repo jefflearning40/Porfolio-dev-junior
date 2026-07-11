@@ -11,3 +11,65 @@ home:
   tools: "Tools<br>used"
   cv: "My resume"
   legal: "Legal notice<br>GDPR<br>Contact"
+
+projects:
+  page_title: My projects
+  title: My projects
+
+  intro: >
+    Discover the main projects I completed
+    during my training and throughout my
+    journey as a web developer.
+
+  status:
+    in_progress: In progress
+    completed: Completed
+
+  links:
+    github: GitHub
+    website: View online
+    github_aria: View the GitHub repository for %project%
+    website_aria: View %project% online
+
+  items:
+    portfolio:
+      name: Developer Portfolio
+      description: >
+        Professional portfolio designed to present
+        my skills, my projects, my resume
+        and my web developer profile.
+
+    shop_manager:
+      name: Shop Manager
+      description: >
+        Business management application developed with React.
+        It will manage products, categories,
+        stock and orders through a modern interface.
+
+    irregular_verbs:
+      name: Irregular Verbs
+      description: >
+        Educational application allowing users to learn,
+        review and practice English irregular verbs
+        through interactive exercises.
+
+    bpm:
+      name: BPM
+      description: >
+        Application used to calculate and display
+        beats per minute. This project was created
+        to improve my JavaScript skills
+        and user interactions.
+
+    magscan:
+      name: MagScan
+      description: >
+        Showcase website created for a fictional chain
+        of city-centre stores.
+
+    plumbing_item:
+      name: Plumbing Item
+      description: >
+        Application for managing plumbing products,
+        stock, sales
+        and statistics.

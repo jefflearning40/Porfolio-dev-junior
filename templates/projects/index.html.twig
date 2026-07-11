@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes créations | My Portfolio{% endblock %}
+{% block title %}
+    {{ 'projects.page_title'|trans }} | My Portfolio
+{% endblock %}
 
 {% block body %}
 
@@ -10,11 +12,10 @@
 
         <header class="projects-header">
 
-            <h1>Mes créations</h1>
+            <h1>{{ 'projects.title'|trans }}</h1>
 
             <p>
-                Découvrez les principaux projets que j’ai réalisés
-                au cours de ma formation et de mon parcours de développeur.
+                {{ 'projects.intro'|trans }}
             </p>
 
         </header>
@@ -31,7 +32,7 @@
                     <summary class="project-accordion-summary">
 
                         <span class="project-accordion-title">
-                            {{ project.name }}
+                            {{ project.name_key|trans }}
                         </span>
 
                         <span class="
@@ -40,7 +41,7 @@
                                 project-accordion-status--progress
                             {% endif %}
                         ">
-                            {{ project.status }}
+                            {{ project.status_key|trans }}
                         </span>
 
                     </summary>
@@ -52,7 +53,7 @@
                             <div class="project-accordion-info">
 
                                 <p class="project-accordion-description">
-                                    {{ project.description }}
+                                    {{ project.description_key|trans }}
                                 </p>
 
                                 <div class="project-accordion-footer">
@@ -62,11 +63,13 @@
                                         {% for technology in project.technologies %}
 
                                             <li>
+
                                                 <img
                                                     src="{{ asset(technology.icon) }}"
                                                     alt="{{ technology.name }}"
                                                     title="{{ technology.name }}"
                                                 >
+
                                             </li>
 
                                         {% endfor %}
@@ -78,29 +81,37 @@
                                         <a
                                             href="{{ project.github_url }}"
                                             class="project-link project-link--github"
-                                            aria-label="Voir le dépôt GitHub de {{ project.name }}"
+                                            aria-label="{{ 'projects.links.github_aria'|trans({'%project%': project.name_key|trans}) }}"
                                         >
+
                                             <img
                                                 src="{{ asset('images/icones/github-icon-2.svg') }}"
                                                 alt=""
                                                 aria-hidden="true"
                                             >
 
-                                            <span>GitHub</span>
+                                            <span>
+                                                {{ 'projects.links.github'|trans }}
+                                            </span>
+
                                         </a>
 
                                         <a
                                             href="{{ project.website_url }}"
                                             class="project-link project-link--website"
-                                            aria-label="Voir {{ project.name }} en ligne"
+                                            aria-label="{{ 'projects.links.website_aria'|trans({'%project%': project.name_key|trans}) }}"
                                         >
+
                                             <img
                                                 src="{{ asset('images/icones/internet.svg') }}"
                                                 alt=""
                                                 aria-hidden="true"
                                             >
 
-                                            <span>Voir en ligne</span>
+                                            <span>
+                                                {{ 'projects.links.website'|trans }}
+                                            </span>
+
                                         </a>
 
                                     </div>
@@ -118,7 +129,7 @@
 
                                 <img
                                     src="{{ asset(project.logo) }}"
-                                    alt="Logo de {{ project.name }}"
+                                    alt="{{ project.name_key|trans }}"
                                 >
 
                             </div>

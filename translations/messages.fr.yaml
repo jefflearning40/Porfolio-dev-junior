@@ -11,3 +11,63 @@ home:
   tools: "Outils<br>utilisés"
   cv: "Mon CV"
   legal: "Mentions légales<br>RGPD<br>Contact"
+
+projects:
+  page_title: Mes créations
+  title: Mes créations
+
+  intro: >
+    Découvrez les principaux projets que j’ai réalisés
+    au cours de ma formation et de mon parcours de développeur.
+
+  status:
+    in_progress: En cours
+    completed: Terminé
+
+  links:
+    github: GitHub
+    website: Voir en ligne
+    github_aria: Voir le dépôt GitHub de %project%
+    website_aria: Voir %project% en ligne
+
+  items:
+    portfolio:
+      name: Portfolio développeur
+      description: >
+        Portfolio professionnel conçu pour présenter
+        mes compétences, mes projets, mon CV
+        et mon profil de développeur web.
+
+    shop_manager:
+      name: Shop Manager
+      description: >
+        Application de gestion commerciale développée avec React.
+        Elle permettra de gérer les produits, les catégories,
+        les stocks et les commandes au sein d’une interface moderne.
+
+    irregular_verbs:
+      name: Irregular Verbs
+      description: >
+        Application pédagogique permettant d’apprendre,
+        de réviser et de tester les verbes irréguliers anglais
+        grâce à différents exercices interactifs.
+
+    bpm:
+      name: BPM
+      description: >
+        Application permettant de calculer et d’afficher
+        les battements par minute. Ce projet a été réalisé
+        afin d’approfondir les manipulations JavaScript
+        et les interactions avec l’utilisateur.
+
+    magscan:
+      name: MagScan
+      description: >
+        Projet de site vitrine réalisé pour une chaîne fictive
+        de magasins implantés en centre-ville.
+
+    plumbing_item:
+      name: Plumbing Item
+      description: >
+        Application de gestion de produits de plomberie,
+        du stock, des ventes et des statistiques.
