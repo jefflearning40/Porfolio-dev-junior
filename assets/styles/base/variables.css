@@ -58,6 +58,22 @@
          HOME
          =========================== */
 
-         --color-home-border: #1597c8;
          --color-home-border-hover: #53d8ff;
+         /* ===========================
+            PROJETS
+         =========================== */
+
+         --color-project-bg: rgba(255, 255, 255, 0.38);
+         --color-project-bg-open: rgba(255, 255, 255, 0.52);
+         --color-project-hover: rgba(255, 255, 255, 0.2);
+
+         --color-project-separator: rgba(21, 151, 200, 0.35);
+
+         --color-project-tech-bg: rgba(255, 255, 255, 0.42);
+         --color-project-tech-bg-hover: rgba(255, 255, 255, 0.7);
+         --color-project-tech-border: rgba(21, 151, 200, 0.45);
+
+         --color-project-status: rgba(0, 212, 255, 0.25);
+         --color-project-status-progress: rgba(255, 212, 0, 0.35);
+
         }

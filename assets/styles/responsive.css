@@ -36,6 +36,42 @@
     .home-card {
         font-size: 1.8rem;
     }
+
+    /* ---------- Projects ---------- */
+
+    .projects {
+        padding: 45px 20px 60px;
+    }
+
+    .projects-header {
+        margin-bottom: 35px;
+    }
+
+    .projects-accordion {
+        max-width: 850px;
+    }
+
+    .project-accordion-summary {
+        padding: 18px 60px 18px 20px;
+    }
+
+    .project-accordion-title {
+        font-size: 1.25rem;
+    }
+
+    .project-accordion-status {
+        margin-right: 20px;
+    }
+
+    .project-accordion-content {
+        padding: 24px 24px 28px;
+    }
+
+    .project-accordion-technologies li {
+        width: 58px;
+        height: 58px;
+        padding: 8px;
+    }
 }
 
 /* ===========================
@@ -150,6 +186,7 @@
         min-height: calc(
             100vh - var(--header-height) - var(--footer-height)
         );
+
         padding: 40px 16px;
 
         align-items: flex-start;
@@ -176,6 +213,88 @@
         font-size: 1.6rem;
     }
 
+    /* ---------- Projects ---------- */
+
+    .projects {
+        padding: 35px 15px 50px;
+    }
+
+    .projects-header {
+        margin-bottom: 30px;
+    }
+
+    .projects-header h1 {
+        font-size: 2rem;
+    }
+
+    .projects-header p {
+        font-size: 0.95rem;
+    }
+
+    .project-accordion {
+        margin-bottom: 16px;
+
+        border-width: 2px;
+    }
+
+    .project-accordion-summary {
+        min-height: auto;
+        padding: 18px 55px 18px 18px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .project-accordion-summary::after {
+        right: 16px;
+
+        width: 30px;
+        height: 30px;
+
+        font-size: 1.3rem;
+    }
+
+    .project-accordion-title {
+        max-width: calc(100% - 45px);
+
+        font-size: 1.15rem;
+    }
+
+    .project-accordion-status {
+        margin-right: 0;
+        padding: 5px 11px;
+
+        font-size: 0.78rem;
+    }
+
+    .project-accordion-content {
+        padding: 22px 18px 25px;
+    }
+
+    .project-accordion-description {
+        margin-bottom: 20px;
+
+        font-size: 0.95rem;
+    }
+
+    .project-accordion-technologies {
+        gap: 10px;
+    }
+
+    .project-accordion-technologies li {
+        width: 52px;
+        height: 52px;
+        padding: 7px;
+    }
+
+    .project-accordion-technologies .technology-text {
+        min-width: 52px;
+        padding: 7px 11px;
+
+        font-size: 0.78rem;
+    }
+
     .site-footer {
         flex-direction: column;
         gap: 10px;
@@ -199,5 +318,32 @@
 
     .home-card {
         font-size: 1.35rem;
+    }
+
+    /* ---------- Projects ---------- */
+
+    .projects {
+        padding: 30px 12px 45px;
+    }
+
+    .projects-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-accordion-summary {
+        padding: 16px 50px 16px 15px;
+    }
+
+    .project-accordion-title {
+        font-size: 1.05rem;
+    }
+
+    .project-accordion-content {
+        padding: 18px 15px 22px;
+    }
+
+    .project-accordion-technologies li {
+        width: 48px;
+        height: 48px;
     }
 }

@@ -1,0 +1,395 @@
+/* ===========================
+   PAGE PROJETS
+=========================== */
+
+.projects {
+    min-height: calc(
+        100vh - var(--header-height) - var(--footer-height)
+    );
+
+    padding: 55px 20px 70px;
+
+    background: linear-gradient(
+        var(--color-home-top),
+        var(--color-home-bottom)
+    );
+
+    font-family: var(--font-primary);
+}
+
+/* ===========================
+   CONTENEUR
+=========================== */
+
+.projects-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+}
+
+/* ===========================
+   EN-TÊTE
+=========================== */
+
+.projects-header {
+    max-width: 800px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.projects-header h1 {
+    margin-bottom: 15px;
+
+    color: var(--color-black);
+
+    font-family: var(--font-code);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 500;
+}
+
+.projects-header p {
+    color: var(--color-dark);
+
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   ACCORDÉON
+=========================== */
+
+.projects-accordion {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+}
+
+.project-accordion {
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+    background: var(--color-project-bg);
+
+    border: 3px solid var(--color-home-border);
+    border-radius: var(--radius-small);
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.project-accordion:hover {
+    border-color: var(--color-home-border-hover);
+}
+
+.project-accordion[open] {
+    background: var(--color-project-bg-open);
+}
+
+/* ===========================
+   BARRE CLIQUABLE
+=========================== */
+
+.project-accordion-summary {
+    position: relative;
+
+    min-height: 82px;
+    padding: 20px 65px 20px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+    list-style: none;
+
+    transition: background-color var(--transition-fast);
+}
+
+.project-accordion-summary:hover {
+    background: var(--color-project-hover);
+}
+
+.project-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ===========================
+   BOUTON + / -
+=========================== */
+
+.project-accordion-summary::after {
+    content: "+";
+
+    position: absolute;
+    top: 50%;
+    right: 24px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-white);
+    background: var(--color-home-border);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.project-accordion[open] .project-accordion-summary::after {
+    content: "−";
+
+    background: var(--color-home-border-hover);
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+/* ===========================
+   TITRE ET STATUT
+=========================== */
+
+.project-accordion-title {
+    color: var(--color-black);
+
+    font-family: var(--font-code);
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.project-accordion-status {
+    flex-shrink: 0;
+
+    margin-right: 25px;
+    padding: 7px 15px;
+
+    color: var(--color-dark);
+    background: var(--color-project-status);
+
+    border: 1px solid var(--color-home-border);
+    border-radius: 25px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.project-accordion-status--progress {
+    background: var(--color-project-status-progress);
+    border-color: var(--color-yellow);
+}
+
+/* ===========================
+   CONTENU
+=========================== */
+
+.project-accordion-content {
+    padding: 28px 30px 32px;
+
+    border-top: 2px solid var(--color-project-separator);
+}
+
+.project-accordion-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    align-items: center;
+    gap: 30px;
+}
+
+.project-accordion-info {
+    min-width: 0;
+}
+
+.project-accordion-description {
+    max-width: 760px;
+    margin-bottom: 24px;
+
+    color: var(--color-dark);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ===========================
+   PIED DU VOLET
+=========================== */
+
+.project-accordion-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+/* ===========================
+   TECHNOLOGIES
+=========================== */
+
+.project-accordion-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.project-accordion-technologies li {
+    width: 64px;
+    height: 64px;
+    padding: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-project-tech-bg);
+
+    border: 1px solid var(--color-project-tech-border);
+    border-radius: 12px;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.project-accordion-technologies li:hover {
+    transform: translateY(-4px);
+
+    background: var(--color-project-tech-bg-hover);
+    border-color: var(--color-home-border-hover);
+}
+
+.project-accordion-technologies img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+/* ===========================
+   LIENS DU PROJET
+=========================== */
+
+.project-accordion-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    flex-shrink: 0;
+}
+
+.project-link {
+    min-height: 46px;
+    padding: 9px 16px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--color-white);
+    background: var(--color-home-border);
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.project-link:hover {
+    transform: translateY(-3px);
+
+    background: var(--color-home-border-hover);
+    border-color: var(--color-white);
+}
+
+.project-link--github {
+    background: var(--color-dark);
+}
+
+.project-link--github:hover {
+    background: var(--color-black);
+}
+
+.project-link--website {
+    background: var(--color-home-border);
+}
+
+/* ===========================
+   ICÔNES DES LIENS
+=========================== */
+
+.project-link img {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+/* ===========================
+   LOGO DU PROJET
+=========================== */
+
+.project-accordion-logo {
+    width: 180px;
+    height: 130px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--color-project-tech-bg);
+
+    border: 1px solid var(--color-project-tech-border);
+    border-radius: 12px;
+}
+
+.project-accordion-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+/* ===========================
+   LOGO MAGSCAN
+=========================== */
+
+.project-accordion-logo--black {
+    background: var(--color-black);
+}
