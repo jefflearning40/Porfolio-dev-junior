@@ -63,6 +63,11 @@
             PROJETS
          =========================== */
 
+         --color-project-overlay: rgba(130, 230, 239, 0.12);
+         --color-project-top: #9ceef5;
+         --color-project-middle: #6fd7e4;
+         --color-project-bottom: #1b7f92;
+
          --color-project-bg: rgba(255, 255, 255, 0.38);
          --color-project-bg-open: rgba(255, 255, 255, 0.52);
          --color-project-hover: rgba(255, 255, 255, 0.2);

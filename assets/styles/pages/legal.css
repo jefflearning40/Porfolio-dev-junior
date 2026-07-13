@@ -1,0 +1,119 @@
+/* ===========================
+   PAGES LÉGALES
+=========================== */
+
+.legal-page {
+    min-height: calc(
+        100vh - var(--header-height) - var(--footer-height)
+    );
+
+    padding: 55px 20px 70px;
+
+    background: linear-gradient(
+        160deg,
+        var(--color-project-top) 0%,
+        var(--color-project-middle) 40%,
+        var(--color-project-bottom) 100%
+    );
+
+    font-family: var(--font-primary);
+}
+
+/* ===========================
+   CONTENEUR
+=========================== */
+
+.legal-container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+/* ===========================
+   EN-TÊTE
+=========================== */
+
+.legal-header {
+    margin-bottom: 45px;
+
+    text-align: center;
+}
+
+.legal-header h1 {
+    margin-bottom: 15px;
+
+    color: var(--color-black);
+
+    font-family: var(--font-code);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 500;
+}
+
+.legal-header p {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: var(--color-dark);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* ===========================
+   GROUPE D’ACCORDÉONS
+=========================== */
+
+.legal-accordion-group {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+/* ===========================
+   ACCORDÉON LÉGAL
+=========================== */
+
+.legal-accordion {
+    margin-bottom: 20px;
+
+    background: var(--color-project-bg);
+}
+
+.legal-accordion[open] {
+    background: var(--color-project-bg-open);
+}
+
+.legal-accordion-summary:hover {
+    background: var(--color-project-hover);
+}
+
+/* ===========================
+   TITRE DU VOLET
+=========================== */
+
+.legal-accordion-title {
+    color: var(--color-black);
+
+    font-family: var(--font-code);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* ===========================
+   CONTENU DU VOLET
+=========================== */
+
+.legal-accordion-content {
+    padding: 24px 28px 28px;
+}
+
+.legal-accordion-content p {
+    color: var(--color-dark);
+
+    font-size: 1rem;
+    line-height: 1.8;
+
+    text-align: justify;
+}

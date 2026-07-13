@@ -1,0 +1,122 @@
+/* ===========================
+   GROUPE D'ACCORDÉONS
+=========================== */
+
+.accordion-group {
+    width: 100%;
+}
+
+/* ===========================
+   ACCORDÉON
+=========================== */
+
+.accordion {
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+    border: 3px solid var(--color-home-border);
+    border-radius: var(--radius-small);
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+        border-color var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.accordion:hover {
+    border-color: var(--color-home-border-hover);
+}
+
+/* ===========================
+   BARRE CLIQUABLE
+=========================== */
+
+.accordion-summary {
+    position: relative;
+
+    min-height: 82px;
+    padding: 20px 65px 20px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    transition: background-color var(--transition-fast);
+}
+
+/* Firefox */
+
+.accordion-summary {
+    list-style: none;
+}
+
+/* Chrome / Edge */
+
+.accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Standard */
+
+.accordion-summary::marker {
+    content: "";
+}
+
+/* ===========================
+   BOUTON + / -
+=========================== */
+
+.accordion-summary::after {
+    content: "+";
+
+    position: absolute;
+    top: 50%;
+    right: 24px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-white);
+    background: var(--color-home-border);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+
+    transform: translateY(-50%);
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+.accordion[open] .accordion-summary::after {
+    content: "−";
+
+    background: var(--color-home-border-hover);
+
+    transform:
+        translateY(-50%)
+        rotate(180deg);
+}
+
+/* ===========================
+   CONTENU
+=========================== */
+
+.accordion-content {
+    border-top: 2px solid var(--color-project-separator);
+}

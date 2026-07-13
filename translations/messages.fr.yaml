@@ -71,3 +71,57 @@ projects:
       description: >
         Application de gestion de produits de plomberie,
         du stock, des ventes et des statistiques.
+
+rgpd:
+  page_title: Politique de confidentialité
+  title: Politique de confidentialité
+
+  intro: >
+    Cette page explique comment les données personnelles
+    sont collectées, utilisées et protégées sur ce portfolio.
+
+  controller:
+    title: Responsable du traitement
+    text: >
+      Le responsable du traitement des données personnelles
+      est le propriétaire de ce portfolio.
+
+  data:
+    title: Données collectées
+    text: >
+      Les seules données susceptibles d’être collectées sont celles
+      transmises volontairement par l’utilisateur via le formulaire
+      de contact, notamment le nom, l’adresse e-mail et le contenu
+      du message.
+
+  use:
+    title: Utilisation des données
+    text: >
+      Les données collectées sont utilisées uniquement pour répondre
+      aux demandes envoyées via le formulaire de contact.
+
+  storage:
+    title: Durée de conservation
+    text: >
+      Les données sont conservées uniquement pendant la durée nécessaire
+      au traitement de la demande, puis supprimées lorsqu’elles ne sont
+      plus utiles.
+
+  sharing:
+    title: Partage des données
+    text: >
+      Aucune donnée personnelle n’est vendue, cédée ou transmise
+      à des tiers, sauf obligation légale.
+
+  rights:
+    title: Vos droits
+    text: >
+      Conformément à la réglementation applicable, vous pouvez demander
+      l’accès, la rectification, l’effacement ou la limitation du traitement
+      de vos données personnelles.
+
+  cookies:
+    title: Cookies
+    text: >
+      Ce portfolio n’utilise pas de cookies publicitaires
+      ni de dispositifs de suivi à des fins commerciales.

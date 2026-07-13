@@ -1,0 +1,193 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'rgpd.page_title'|trans }} | My Portfolio
+{% endblock %}
+
+{% block body %}
+
+<section class="legal-page">
+
+    <div class="legal-container">
+
+        <header class="legal-header">
+
+            <h1>{{ 'rgpd.title'|trans }}</h1>
+
+            <p>
+                {{ 'rgpd.intro'|trans }}
+            </p>
+
+        </header>
+
+        <div class="accordion-group legal-accordion-group">
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+                open
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.controller.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.controller.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.data.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.data.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.use.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.use.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.storage.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.storage.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.sharing.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.sharing.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.rights.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.rights.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="rgpd-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'rgpd.cookies.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'rgpd.cookies.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

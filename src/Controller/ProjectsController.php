@@ -74,7 +74,7 @@ final class ProjectsController extends AbstractController
                     ],
                     [
                         'name' => 'Tailwind CSS',
-                        'icon' => 'images/icones/tailwind-css-2.3.svg',
+                        'icon' => 'images/icones/tailwind-css.svg',
                     ],
                 ],
             ],

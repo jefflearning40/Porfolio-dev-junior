@@ -20,16 +20,17 @@
 
         </header>
 
-        <div class="projects-accordion">
+        <div class="accordion-group projects-accordion">
 
             {% for project in projects %}
 
                 <details
-                    class="project-accordion"
+                    name="projects-accordion"
+                    class="accordion project-accordion"
                     {% if loop.first %}open{% endif %}
                 >
 
-                    <summary class="project-accordion-summary">
+                    <summary class="accordion-summary project-accordion-summary">
 
                         <span class="project-accordion-title">
                             {{ project.name_key|trans }}
@@ -46,7 +47,7 @@
 
                     </summary>
 
-                    <div class="project-accordion-content">
+                    <div class="accordion-content project-accordion-content">
 
                         <div class="project-accordion-main">
 
@@ -81,7 +82,9 @@
                                         <a
                                             href="{{ project.github_url }}"
                                             class="project-link project-link--github"
-                                            aria-label="{{ 'projects.links.github_aria'|trans({'%project%': project.name_key|trans}) }}"
+                                            aria-label="{{ 'projects.links.github_aria'|trans({
+                                                '%project%': project.name_key|trans
+                                            }) }}"
                                         >
 
                                             <img
@@ -99,7 +102,9 @@
                                         <a
                                             href="{{ project.website_url }}"
                                             class="project-link project-link--website"
-                                            aria-label="{{ 'projects.links.website_aria'|trans({'%project%': project.name_key|trans}) }}"
+                                            aria-label="{{ 'projects.links.website_aria'|trans({
+                                                '%project%': project.name_key|trans
+                                            }) }}"
                                         >
 
                                             <img

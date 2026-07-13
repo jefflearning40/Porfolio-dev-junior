@@ -73,3 +73,57 @@ projects:
         Application for managing plumbing products,
         stock, sales
         and statistics.
+
+rgpd:
+  page_title: Privacy Policy
+  title: Privacy Policy
+
+  intro: >
+    This page explains how personal data is collected,
+    used and protected on this portfolio.
+
+  controller:
+    title: Data controller
+    text: >
+      The data controller responsible for personal data
+      is the owner of this portfolio.
+
+  data:
+    title: Data collected
+    text: >
+      The only data that may be collected is information
+      voluntarily provided by the user through the contact form,
+      including the user's name, email address and message content.
+
+  use:
+    title: Use of data
+    text: >
+      The collected data is used solely to respond
+      to requests submitted through the contact form.
+
+  storage:
+    title: Data retention period
+    text: >
+      Personal data is retained only for the time necessary
+      to process the request and is then deleted when it is
+      no longer required.
+
+  sharing:
+    title: Data sharing
+    text: >
+      No personal data is sold, transferred or shared
+      with third parties, except where required by law.
+
+  rights:
+    title: Your rights
+    text: >
+      In accordance with applicable regulations,
+      you may request access to, correction,
+      deletion or restriction of the processing
+      of your personal data.
+
+  cookies:
+    title: Cookies
+    text: >
+      This portfolio does not use advertising cookies
+      or commercial tracking technologies.

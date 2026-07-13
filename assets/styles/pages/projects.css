@@ -10,8 +10,10 @@
     padding: 55px 20px 70px;
 
     background: linear-gradient(
-        var(--color-home-top),
-        var(--color-home-bottom)
+        160deg,
+        var(--color-project-top) 0%,
+        var(--color-project-middle) 40%,
+        var(--color-project-bottom) 100%
     );
 
     font-family: var(--font-primary);
@@ -58,11 +60,10 @@
 }
 
 /* ===========================
-   ACCORDÉON
+   ACCORDÉON PROJETS
 =========================== */
 
 .projects-accordion {
-    width: 100%;
     max-width: 950px;
 
     margin: 0 auto;
@@ -71,99 +72,19 @@
 .project-accordion {
     margin-bottom: 22px;
 
-    overflow: hidden;
-
     background: var(--color-project-bg);
-
-    border: 3px solid var(--color-home-border);
-    border-radius: var(--radius-small);
-
-    box-shadow: var(--shadow-card);
-
-    transition:
-        border-color var(--transition-fast),
-        background-color var(--transition-fast);
-}
-
-.project-accordion:hover {
-    border-color: var(--color-home-border-hover);
 }
 
 .project-accordion[open] {
     background: var(--color-project-bg-open);
 }
 
-/* ===========================
-   BARRE CLIQUABLE
-=========================== */
-
-.project-accordion-summary {
-    position: relative;
-
-    min-height: 82px;
-    padding: 20px 65px 20px 25px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-
-    cursor: pointer;
-    list-style: none;
-
-    transition: background-color var(--transition-fast);
-}
-
 .project-accordion-summary:hover {
     background: var(--color-project-hover);
 }
 
-.project-accordion-summary::-webkit-details-marker {
-    display: none;
-}
-
-/* ===========================
-   BOUTON + / -
-=========================== */
-
-.project-accordion-summary::after {
-    content: "+";
-
-    position: absolute;
-    top: 50%;
-    right: 24px;
-
-    width: 32px;
-    height: 32px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: var(--color-white);
-    background: var(--color-home-border);
-
-    border-radius: 50%;
-
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-
-    transform: translateY(-50%);
-
-    transition:
-        transform var(--transition-fast),
-        background-color var(--transition-fast);
-}
-
-.project-accordion[open] .project-accordion-summary::after {
-    content: "−";
-
-    background: var(--color-home-border-hover);
-
-    transform:
-        translateY(-50%)
-        rotate(180deg);
+.project-accordion-content {
+    padding: 28px 30px 32px;
 }
 
 /* ===========================
@@ -200,14 +121,8 @@
 }
 
 /* ===========================
-   CONTENU
+   CONTENU DU PROJET
 =========================== */
-
-.project-accordion-content {
-    padding: 28px 30px 32px;
-
-    border-top: 2px solid var(--color-project-separator);
-}
 
 .project-accordion-main {
     display: grid;
@@ -386,9 +301,6 @@
 
     object-fit: contain;
 }
-/* ===========================
-   LOGO MAGSCAN
-=========================== */
 
 .project-accordion-logo--black {
     background: var(--color-black);
