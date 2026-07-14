@@ -199,6 +199,7 @@ contact:
 
   flash:
     success: Your message has been sent successfully.
+    rate_limit: Too many messages have been sent. Please try again in a few minutes.
 
   modal:
     close: Close window

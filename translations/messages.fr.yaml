@@ -195,6 +195,7 @@ contact:
     privacy_link: politique de confidentialité
     privacy_error: Vous devez accepter la politique de confidentialité.
     submit: Envoyer le message
+    rate_limit: Trop de messages ont été envoyés. Veuillez réessayer dans quelques minutes.
 
   flash:
     success: Votre message a été envoyé avec succès.

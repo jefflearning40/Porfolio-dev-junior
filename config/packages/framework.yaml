@@ -10,14 +10,21 @@ framework:
         fallbacks:
             - fr
 
-    # Note that the session will be started ONLY if you read or write from it.
+    # La session démarre uniquement si elle est utilisée.
     session: true
 
-    #esi: true
-    #fragments: true
+    rate_limiter:
+        contact_form:
+            policy: fixed_window
+            limit: 1                
+            interval: '10 minute'
+
+    # esi: true
+    # fragments: true
 
 when@test:
     framework:
         test: true
+
         session:
             storage_factory_id: session.storage.factory.mock_file
