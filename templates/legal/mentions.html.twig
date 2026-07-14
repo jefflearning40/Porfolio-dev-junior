@@ -1,0 +1,160 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'legal_mentions.page_title'|trans }} | My Portfolio
+{% endblock %}
+
+{% block body %}
+
+<section class="legal-page">
+
+    <div class="legal-container">
+
+        <header class="legal-header">
+
+            <h1>{{ 'legal_mentions.title'|trans }}</h1>
+
+            <p>
+                {{ 'legal_mentions.intro'|trans }}
+            </p>
+
+        </header>
+
+        <div class="accordion-group legal-accordion-group">
+
+            <details
+                name="mentions-accordion"
+                class="accordion legal-accordion"
+                open
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'legal_mentions.publisher.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'legal_mentions.publisher.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="mentions-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'legal_mentions.hosting.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'legal_mentions.hosting.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="mentions-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'legal_mentions.intellectual_property.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'legal_mentions.intellectual_property.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="mentions-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'legal_mentions.liability.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'legal_mentions.liability.text'|trans }}
+                    </p>
+
+                </div>
+
+            </details>
+
+            <details
+                name="mentions-accordion"
+                class="accordion legal-accordion"
+            >
+
+                <summary class="accordion-summary legal-accordion-summary">
+
+                    <span class="legal-accordion-title">
+                        {{ 'legal_mentions.contact.title'|trans }}
+                    </span>
+
+                </summary>
+
+                <div class="accordion-content legal-accordion-content">
+
+                    <p>
+                        {{ 'legal_mentions.contact.text'|trans }}
+                    </p>
+
+                    <div class="legal-contact-action">
+
+                        <a
+                            href="{{ path('app_contact', {
+                                '_locale': app.request.locale
+                            }) }}"
+                            class="legal-contact-button"
+                        >
+                            {{ 'legal_mentions.contact.button'|trans }}
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

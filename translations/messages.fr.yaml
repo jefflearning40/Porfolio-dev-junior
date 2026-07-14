@@ -125,3 +125,130 @@ rgpd:
     text: >
       Ce portfolio n’utilise pas de cookies publicitaires
       ni de dispositifs de suivi à des fins commerciales.
+
+legal_mentions:
+  page_title: Mentions légales
+  title: Mentions légales
+
+  intro: >
+    Cette page présente les informations légales relatives
+    à l’éditeur, à l’hébergement et aux conditions
+    d’utilisation de ce portfolio.
+
+  publisher:
+    title: Éditeur du site
+    text: >
+      Ce portfolio est édité par Jean-François Delhomme.
+      Il a été conçu dans le cadre de mon parcours de développeur
+      web afin de présenter mes compétences, mes projets
+      et mon expérience.
+
+  hosting:
+    title: Hébergement
+    text: >
+      Ce site est hébergé par un prestataire d’hébergement
+      professionnel garantissant la disponibilité et
+      la sécurité des données.
+
+  intellectual_property:
+    title: Propriété intellectuelle
+    text: >
+      L’ensemble des contenus présents sur ce portfolio
+      (textes, images, illustrations, logos, icônes
+      et développements) est protégé par le droit de la
+      propriété intellectuelle. Toute reproduction totale
+      ou partielle est interdite sans autorisation préalable.
+
+  liability:
+    title: Responsabilité
+    text: >
+      Les informations présentes sur ce portfolio sont
+      fournies à titre informatif. Malgré le soin apporté
+      à leur rédaction, l’éditeur ne saurait être tenu
+      responsable d’éventuelles erreurs, omissions ou
+      interruptions de service.
+
+  contact:
+    title: Contact
+    text: >
+      Pour toute demande d’information ou de contact,
+      veuillez utiliser le formulaire de contact disponible
+      sur ce portfolio.
+    button: Me contacter
+
+contact:
+  page_title: Contact
+  title: Contactez-moi
+
+  intro: >
+    Vous souhaitez échanger à propos d’un projet,
+    d’une alternance ou simplement prendre contact ?
+    N’hésitez pas à m’envoyer un message.
+
+  form:
+    last_name: Nom
+    first_name: Prénom
+    email: Adresse e-mail
+    subject: Sujet
+    message: Votre message
+    privacy_start: J’accepte la
+    privacy_link: politique de confidentialité
+    privacy_error: Vous devez accepter la politique de confidentialité.
+    submit: Envoyer le message
+
+  flash:
+    success: Votre message a été envoyé avec succès.
+
+  modal:
+    close: Fermer la fenêtre
+    close_button: Fermer
+
+  validation:
+    last_name:
+      required: Le nom est obligatoire.
+      max: Le nom ne peut pas dépasser {{ limit }} caractères.
+
+    first_name:
+      max: Le prénom ne peut pas dépasser {{ limit }} caractères.
+
+    email:
+      required: L'adresse e-mail est obligatoire.
+      invalid: Veuillez saisir une adresse e-mail valide.
+      max: L'adresse e-mail ne peut pas dépasser {{ limit }} caractères.
+
+    subject:
+      required: Le sujet est obligatoire.
+      max: Le sujet ne peut pas dépasser {{ limit }} caractères.
+
+    message:
+      required: Le message est obligatoire.
+      min: Le message doit contenir au moins {{ limit }} caractères.
+
+cv:
+  page_title: Mon CV
+  title: Mon CV
+
+  intro: >
+    Retrouvez ci-dessous mon curriculum vitae.
+    Vous pouvez le consulter directement
+    ou le télécharger au format PDF.
+
+  download: Télécharger le CV
+
+  pdf_unavailable: >
+    Votre navigateur ne peut pas afficher le document PDF.
+
+skills:
+  page_title: Compétences
+  title: Technologies et outils
+
+  intro: >
+    Voici les principales technologies,
+    bases de données et outils que j’utilise
+    dans mes projets de développement web.
+
+  categories:
+    frontend: Front-end
+    backend: Back-end
+    database: Bases de données
+    tools: Outils

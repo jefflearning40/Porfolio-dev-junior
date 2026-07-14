@@ -27,8 +27,14 @@
             <li><a href="{{ path('app_cv', {'_locale': app.request.locale}) }}">{{ 'navbar.cv'|trans }}</a></li>
 
             <li class="mobile-github">
-                <a href="https://github.com/jefflearning40">GitHub</a>
-            </li>
+    <a
+        href="https://github.com/jefflearning40"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        GitHub
+    </a>
+</li>
 
         </ul>
 
@@ -42,11 +48,18 @@
         </div>
 
         <!-- GitHub -->
-        <a href="https://github.com/jefflearning40"
-           class="navbar-github"
-           target="_blank">
-            <img src="{{ asset('images/icones/github-icon-2.svg') }}" alt="GitHub">
-        </a>
+       <a
+    href="https://github.com/jefflearning40"
+    class="navbar-github"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+>
+    <img
+        src="{{ asset('images/icones/github-icon-2.svg') }}"
+        alt="GitHub"
+    >
+</a>
 
     </nav>
 

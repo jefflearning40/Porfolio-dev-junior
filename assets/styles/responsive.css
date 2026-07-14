@@ -8,6 +8,8 @@
         --github-size: 44px;
     }
 
+    /* ---------- Navbar ---------- */
+
     .navbar {
         padding: 4px 24px 0;
     }
@@ -27,6 +29,8 @@
     .navbar-github {
         width: 70px;
     }
+
+    /* ---------- Home ---------- */
 
     .home-cards {
         max-width: 760px;
@@ -67,10 +71,66 @@
         padding: 24px 24px 28px;
     }
 
+    .project-accordion-main {
+        grid-template-columns: minmax(0, 1fr) 160px;
+        gap: 24px;
+    }
+
+    .project-accordion-logo {
+        width: 160px;
+        height: 120px;
+    }
+
+    .project-accordion-footer {
+        gap: 18px;
+    }
+
     .project-accordion-technologies li {
         width: 58px;
         height: 58px;
         padding: 8px;
+    }
+
+    .project-link {
+        padding: 9px 13px;
+    }
+
+    /* ---------- CV ---------- */
+
+    .cv-page {
+        padding: 45px 20px 60px;
+    }
+
+    .cv-header {
+        margin-bottom: 35px;
+    }
+
+    .cv-card {
+        padding: 24px;
+    }
+
+    .cv-preview {
+        height: 650px;
+    }
+
+    /* ---------- Modal RGPD ---------- */
+
+    .privacy-modal {
+        padding: 18px;
+    }
+
+    .privacy-modal-dialog {
+        max-width: 700px;
+        max-height: 86vh;
+        padding: 28px;
+    }
+
+    .privacy-modal-dialog h2 {
+        font-size: 1.85rem;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1.1rem;
     }
 }
 
@@ -83,6 +143,8 @@
         --header-height: 90px;
         --logo-height: 72px;
     }
+
+    /* ---------- Navbar ---------- */
 
     .navbar {
         padding: 0 18px;
@@ -182,6 +244,8 @@
         transform: translateY(-11px) rotate(-45deg);
     }
 
+    /* ---------- Home ---------- */
+
     .home {
         min-height: calc(
             100vh - var(--header-height) - var(--footer-height)
@@ -246,7 +310,7 @@
         gap: 10px;
     }
 
-    .project-accordion-summary::after {
+    .accordion-summary::after {
         right: 16px;
 
         width: 30px;
@@ -272,13 +336,34 @@
         padding: 22px 18px 25px;
     }
 
+    .project-accordion-main {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .project-accordion-info {
+        width: 100%;
+    }
+
     .project-accordion-description {
-        margin-bottom: 20px;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 22px;
 
         font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .project-accordion-footer {
+        width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
     }
 
     .project-accordion-technologies {
+        justify-content: center;
         gap: 10px;
     }
 
@@ -288,12 +373,149 @@
         padding: 7px;
     }
 
-    .project-accordion-technologies .technology-text {
-        min-width: 52px;
-        padding: 7px 11px;
+    .project-accordion-logo {
+        width: 100%;
+        max-width: 220px;
+        height: 145px;
 
-        font-size: 0.78rem;
+        margin: 0 auto;
+
+        grid-row: 2;
     }
+
+    .project-accordion-links {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .project-link {
+        width: 100%;
+        min-width: 0;
+        padding: 10px 8px;
+
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .project-link img {
+        width: 21px;
+        height: 21px;
+    }
+
+    /* ---------- Pages légales ---------- */
+
+    .legal-page {
+        padding: 35px 15px 50px;
+    }
+
+    .legal-header {
+        margin-bottom: 30px;
+    }
+
+    .legal-header h1 {
+        font-size: 2rem;
+    }
+
+    .legal-header p {
+        font-size: 0.95rem;
+    }
+
+    .legal-accordion-title {
+        font-size: 1.1rem;
+    }
+
+    .legal-accordion-content {
+        padding: 20px 18px 23px;
+    }
+
+    .legal-accordion-content p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    /* ---------- CV ---------- */
+
+    .cv-page {
+        padding: 35px 15px 50px;
+    }
+
+    .cv-header {
+        margin-bottom: 30px;
+    }
+
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+
+    .cv-header p {
+        font-size: 0.95rem;
+    }
+
+    .cv-card {
+        padding: 18px;
+    }
+
+    .cv-preview {
+        height: 520px;
+    }
+
+    .cv-actions {
+        margin-top: 20px;
+    }
+
+    .cv-download {
+        width: 100%;
+    }
+
+    /* ---------- Modal RGPD ---------- */
+
+    .privacy-modal {
+        padding: 12px;
+    }
+
+    .privacy-modal-dialog {
+        max-width: 100%;
+        max-height: 88vh;
+        padding: 24px 18px 20px;
+    }
+
+    .privacy-modal-dialog h2 {
+        margin-right: 42px;
+
+        font-size: 1.6rem;
+    }
+
+    .privacy-modal-content section {
+        margin-bottom: 22px;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .privacy-modal-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .privacy-modal-close {
+        top: 12px;
+        right: 12px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 1.3rem;
+    }
+
+    .privacy-modal-button {
+        width: 100%;
+    }
+
+    /* ---------- Footer ---------- */
 
     .site-footer {
         flex-direction: column;
@@ -316,6 +538,8 @@
         --logo-height: 62px;
     }
 
+    /* ---------- Home ---------- */
+
     .home-card {
         font-size: 1.35rem;
     }
@@ -323,7 +547,7 @@
     /* ---------- Projects ---------- */
 
     .projects {
-        padding: 30px 12px 45px;
+        padding: 30px 8px 45px;
     }
 
     .projects-header h1 {
@@ -331,7 +555,7 @@
     }
 
     .project-accordion-summary {
-        padding: 16px 50px 16px 15px;
+        padding: 16px 50px 16px 14px;
     }
 
     .project-accordion-title {
@@ -339,11 +563,102 @@
     }
 
     .project-accordion-content {
-        padding: 18px 15px 22px;
+        padding: 18px 14px 22px;
+    }
+
+    .project-accordion-technologies {
+        justify-content: flex-start;
     }
 
     .project-accordion-technologies li {
         width: 48px;
         height: 48px;
+        padding: 6px;
+    }
+
+    .project-accordion-logo {
+        max-width: 200px;
+        height: 130px;
+    }
+
+    .project-accordion-links {
+        grid-template-columns: 1fr;
+    }
+
+    .project-link {
+        min-height: 44px;
+    }
+
+    /* ---------- Pages légales ---------- */
+
+    .legal-page {
+        padding: 30px 10px 45px;
+    }
+
+    .legal-header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* ---------- CV ---------- */
+
+    .cv-page {
+        padding: 30px 10px 45px;
+    }
+
+    .cv-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cv-card {
+        padding: 14px;
+    }
+
+    .cv-preview {
+        height: 420px;
+    }
+
+    /* ---------- Modal RGPD ---------- */
+
+    .privacy-modal {
+        padding: 8px;
+    }
+
+    .privacy-modal-dialog {
+        max-height: 92vh;
+        padding: 22px 14px 18px;
+    }
+
+    .privacy-modal-dialog h2 {
+        margin-right: 38px;
+
+        font-size: 1.4rem;
+    }
+
+    .privacy-modal-content section {
+        margin-bottom: 20px;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1rem;
+    }
+
+    .privacy-modal-content p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .privacy-modal-close {
+        top: 10px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 1.2rem;
+    }
+
+    .privacy-modal-button {
+        min-height: 44px;
+        margin-top: 20px;
     }
 }

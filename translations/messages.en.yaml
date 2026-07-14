@@ -127,3 +127,128 @@ rgpd:
     text: >
       This portfolio does not use advertising cookies
       or commercial tracking technologies.
+
+legal_mentions:
+  page_title: Legal Notice
+  title: Legal Notice
+
+  intro: >
+    This page provides the legal information relating
+    to the publisher, hosting and conditions of use
+    of this portfolio.
+
+  publisher:
+    title: Website publisher
+    text: >
+      This portfolio is published by Jean-François Delhomme.
+      It was created as part of my journey as a web developer
+      to showcase my skills, projects and professional profile.
+
+  hosting:
+    title: Hosting
+    text: >
+      This website is hosted by a professional hosting
+      provider ensuring the availability and security
+      of the service.
+
+  intellectual_property:
+    title: Intellectual property
+    text: >
+      All content published on this portfolio
+      (texts, images, illustrations, logos, icons
+      and source code) is protected by intellectual
+      property laws. Any reproduction, in whole or in part,
+      is prohibited without prior permission.
+
+  liability:
+    title: Liability
+    text: >
+      The information provided on this portfolio
+      is supplied for information purposes only.
+      Although every effort is made to keep it accurate,
+      the publisher cannot be held responsible for
+      any errors, omissions or service interruptions.
+
+  contact:
+    title: Contact
+    text: >
+      For any request or additional information,
+      please use the contact form available
+      on this portfolio.
+    button: Contact me
+
+contact:
+  page_title: Contact
+  title: Contact me
+
+  intro: >
+    Would you like to discuss a project,
+    an apprenticeship or simply get in touch?
+    Feel free to send me a message using the form below.
+
+  form:
+    last_name: Last name
+    first_name: First name
+    email: Email address
+    subject: Subject
+    message: Message
+    privacy_start: I accept the
+    privacy_link: privacy policy
+    privacy_error: You must accept the privacy policy.
+    submit: Send message
+
+  flash:
+    success: Your message has been sent successfully.
+
+  modal:
+    close: Close window
+    close_button: Close
+
+  validation:
+    last_name:
+      required: Last name is required.
+      max: Last name cannot exceed {{ limit }} characters.
+
+    first_name:
+      max: First name cannot exceed {{ limit }} characters.
+
+    email:
+      required: Email address is required.
+      invalid: Please enter a valid email address.
+      max: Email address cannot exceed {{ limit }} characters.
+
+    subject:
+      required: Subject is required.
+      max: Subject cannot exceed {{ limit }} characters.
+
+    message:
+      required: Message is required.
+      min: Message must contain at least {{ limit }} characters.
+
+cv:
+  page_title: My Resume
+  title: My Resume
+
+  intro: >
+    You can view my resume below
+    or download it as a PDF file.
+
+  download: Download Resume
+
+  pdf_unavailable: >
+    Your browser cannot display the PDF document.
+
+skills:
+  page_title: Skills
+  title: Technologies and tools
+
+  intro: >
+    Here are the main technologies,
+    databases and tools I use
+    in my web development projects.
+
+  categories:
+    frontend: Front-end
+    backend: Back-end
+    database: Databases
+    tools: Tools

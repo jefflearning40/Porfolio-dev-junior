@@ -16,8 +16,6 @@ final class SkillsController extends AbstractController
     )]
     public function index(): Response
     {
-        return $this->render('skills/index.html.twig', [
-            'controller_name' => 'SkillsController',
-        ]);
+        return $this->render('skills/index.html.twig');
     }
 }

@@ -1,20 +1,239 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SkillsController!{% endblock %}
+{% block title %}
+    {{ 'skills.page_title'|trans }} | My Portfolio
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<section class="skills-page">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/laragon/www/Porfolio-dev-junior/src/Controller/SkillsController.php</code></li>
-        <li>Your template at <code>C:/laragon/www/Porfolio-dev-junior/templates/skills/index.html.twig</code></li>
+    <div class="skills-container">
+
+        <header class="skills-header">
+
+            <h1>{{ 'skills.title'|trans }}</h1>
+
+            <p>
+                {{ 'skills.intro'|trans }}
+            </p>
+
+        </header>
+
+        <div class="skills-grid">
+
+            <article class="skills-card">
+
+                <h2>{{ 'skills.categories.frontend'|trans }}</h2>
+
+                <ul class="skills-list">
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/html5.png') }}"
+                            alt="HTML"
+                        >
+                        <span>HTML</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/css3.png') }}"
+                            alt="CSS"
+                        >
+                        <span>CSS</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/javascript.svg') }}"
+                            alt="JavaScript"
+                        >
+                        <span>JavaScript</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/react-native-1.svg') }}"
+                            alt="React"
+                        >
+                        <span>React</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/tailwind-css.svg') }}"
+                            alt="Tailwind CSS"
+                        >
+                        <span>Tailwind CSS</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/bootstrap-5-1.svg') }}"
+                            alt="Bootstrap"
+                        >
+                        <span>Bootstrap</span>
+                    </li>
+
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+    <h2>{{ 'skills.categories.backend'|trans }}</h2>
+
+    <ul class="skills-list">
+
+        <li class="skill-item">
+            <img
+                src="{{ asset('images/icones/php-6.svg') }}"
+                alt="PHP"
+            >
+            <span>PHP</span>
+        </li>
+
+        <li class="skill-item">
+            <img
+                src="{{ asset('images/icones/symfony.svg') }}"
+                alt="Symfony"
+            >
+            <span>Symfony</span>
+        </li>
+
+        <li class="skill-item">
+            <img
+                src="{{ asset('images/icones/doctrine-orm.png') }}"
+                alt="Doctrine ORM"
+            >
+            <span>Doctrine</span>
+        </li>
+
+        <li class="skill-item">
+            <img
+                src="{{ asset('images/icones/nodejs.svg') }}"
+                alt="Node.js"
+            >
+            <span>Node.js</span>
+        </li>
+
+        <li class="skill-item">
+            <img
+                src="{{ asset('images/icones/expressjs.png') }}"
+                alt="Express"
+            >
+            <span>Express</span>
+        </li>
+
     </ul>
-</div>
+
+</article>
+
+            <article class="skills-card">
+
+                <h2>{{ 'skills.categories.database'|trans }}</h2>
+
+                <ul class="skills-list">
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/mysql-3.svg') }}"
+                            alt="MySQL"
+                        >
+                        <span>MySQL</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/mongodb-icon-1.svg') }}"
+                            alt="MongoDB"
+                        >
+                        <span>MongoDB</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/heidiSQL.jpg') }}"
+                            alt="HeidiSQL"
+                        >
+                        <span>HeidiSQL</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/docker-3.svg') }}"
+                            alt="Docker"
+                        >
+                        <span>Docker</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/laragon.svg') }}"
+                            alt="Laragon"
+                        >
+                        <span>Laragon</span>
+                    </li>
+
+                </ul>
+
+            </article>
+
+            <article class="skills-card">
+
+                <h2>{{ 'skills.categories.tools'|trans }}</h2>
+
+                <ul class="skills-list">
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/git.svg') }}"
+                            alt="Git"
+                        >
+                        <span>Git</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/github-icon-2.svg') }}"
+                            alt="GitHub"
+                        >
+                        <span>GitHub</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/visual-studio-code-1.svg') }}"
+                            alt="Visual Studio Code"
+                        >
+                        <span>VS Code</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/figma-icon.svg') }}"
+                            alt="Figma"
+                        >
+                        <span>Figma</span>
+                    </li>
+
+                    <li class="skill-item">
+                        <img
+                            src="{{ asset('images/icones/trello.svg') }}"
+                            alt="Trello"
+                        >
+                        <span>Trello</span>
+                    </li>
+
+                </ul>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
 {% endblock %}
