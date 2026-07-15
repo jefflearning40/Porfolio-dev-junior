@@ -225,6 +225,7 @@ contact:
     message:
       required: Message is required.
       min: Message must contain at least {{ limit }} characters.
+      max: Message cannot exceed {{ limit }} characters.
 
 cv:
   page_title: My Resume

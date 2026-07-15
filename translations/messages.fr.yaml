@@ -224,6 +224,7 @@ contact:
     message:
       required: Le message est obligatoire.
       min: Le message doit contenir au moins {{ limit }} caractères.
+      max: Le message ne peut pas dépasser {{ limit }} caractères.
 
 cv:
   page_title: Mon CV

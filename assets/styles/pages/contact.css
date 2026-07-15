@@ -536,3 +536,19 @@
 body.modal-open {
     overflow: hidden;
 }
+/* ===========================
+   HONEYPOT
+=========================== */
+
+.contact-honeypot {
+    position: absolute;
+    left: -9999px;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0;
+    pointer-events: none;
+}

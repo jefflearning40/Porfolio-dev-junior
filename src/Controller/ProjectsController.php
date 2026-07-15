@@ -51,6 +51,14 @@ final class ProjectsController extends AbstractController
                         'name' => 'CSS',
                         'icon' => 'images/icones/css-3.svg',
                     ],
+                    [
+                        'name' => 'Doctrine ORM',
+                        'icon' => 'images/icones/doctrine-orm.png',
+                    ],
+                    [
+                        'name' => 'Honeypot',
+                        'icon' => 'images/icones/honeypot.png',
+                    ],
                 ],
             ],
 

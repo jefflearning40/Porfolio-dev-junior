@@ -61,7 +61,9 @@ class ContactMessage
     )]
     #[Assert\Length(
         min: 10,
-        minMessage: 'contact.validation.message.min'
+        max: 5000,
+        minMessage: 'contact.validation.message.min',
+        maxMessage: 'contact.validation.message.max'
     )]
     private ?string $message = null;
 
@@ -85,7 +87,7 @@ class ContactMessage
 
     public function setLastName(string $lastName): static
     {
-        $this->lastName = $lastName;
+        $this->lastName = self::normalizeSingleLine($lastName);
 
         return $this;
     }
@@ -97,7 +99,17 @@ class ContactMessage
 
     public function setFirstName(?string $firstName): static
     {
-        $this->firstName = $firstName;
+        if ($firstName === null) {
+            $this->firstName = null;
+
+            return $this;
+        }
+
+        $normalizedFirstName = self::normalizeSingleLine($firstName);
+
+        $this->firstName = $normalizedFirstName === ''
+            ? null
+            : $normalizedFirstName;
 
         return $this;
     }
@@ -109,7 +121,9 @@ class ContactMessage
 
     public function setEmail(string $email): static
     {
-        $this->email = $email;
+        $this->email = mb_strtolower(
+            trim($email)
+        );
 
         return $this;
     }
@@ -121,7 +135,7 @@ class ContactMessage
 
     public function setSubject(string $subject): static
     {
-        $this->subject = $subject;
+        $this->subject = self::normalizeSingleLine($subject);
 
         return $this;
     }
@@ -133,7 +147,7 @@ class ContactMessage
 
     public function setMessage(string $message): static
     {
-        $this->message = $message;
+        $this->message = trim($message);
 
         return $this;
     }
@@ -148,5 +162,16 @@ class ContactMessage
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    private static function normalizeSingleLine(string $value): string
+    {
+        $normalizedValue = preg_replace(
+            '/\s+/u',
+            ' ',
+            trim($value)
+        );
+
+        return $normalizedValue ?? trim($value);
     }
 }
