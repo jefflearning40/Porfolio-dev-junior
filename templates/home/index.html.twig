@@ -5,39 +5,79 @@
 {% block body %}
 
 <section class="home">
+
     <video class="home-video" autoplay muted loop playsinline>
-        <source src="{{ asset('videos/fondecranvscmp4.mp4') }}" type="video/mp4">
+        <source
+            src="{{ asset('videos/fondecranvscmp4.mp4') }}"
+            type="video/mp4"
+        >
     </video>
 
     <div class="home-cards">
 
-        <article class="home-card">
+        <a
+            href="{{ path('app_projects', {'_locale': app.request.locale}) }}"
+            class="home-card"
+        >
+
             <span>{{ 'home.projects'|trans|raw }}</span>
-           <div class="home-card-icon">
-           <img src="{{ asset('images/icones/card_projects.svg') }}" alt="">
-</div>
-        </article>
 
-        <article class="home-card">
+            <div class="home-card-icon">
+                <img
+                    src="{{ asset('images/icones/card_projects.svg') }}"
+                    alt=""
+                >
+            </div>
+
+        </a>
+
+        <a
+            href="{{ path('app_skills', {'_locale': app.request.locale}) }}"
+            class="home-card"
+        >
+
             <span>{{ 'home.tools'|trans|raw }}</span>
-           <div class="home-card-icon">
-    <img src="{{ asset('images/icones/card_tool.svg') }}" alt="">
-</div>
-        </article>
 
-        <article class="home-card">
+            <div class="home-card-icon">
+                <img
+                    src="{{ asset('images/icones/card_tool.svg') }}"
+                    alt=""
+                >
+            </div>
+
+        </a>
+
+        <a
+            href="{{ path('app_cv', {'_locale': app.request.locale}) }}"
+            class="home-card"
+        >
+
             <span>{{ 'home.cv'|trans }}</span>
-           <div class="home-card-icon">
-    <img src="{{ asset('images/icones/card_cv.svg') }}" alt="">
-</div>
-        </article>
 
-        <article class="home-card">
+            <div class="home-card-icon">
+                <img
+                    src="{{ asset('images/icones/card_cv.svg') }}"
+                    alt=""
+                >
+            </div>
+
+        </a>
+
+        <a
+            href="{{ path('app_legal_mentions', {'_locale': app.request.locale}) }}"
+            class="home-card"
+        >
+
             <span>{{ 'home.legal'|trans|raw }}</span>
-           <div class="home-card-icon">
-    <img src="{{ asset('images/icones/card_legal.svg') }}" alt="">
-</div>
-        </article>
+
+            <div class="home-card-icon">
+                <img
+                    src="{{ asset('images/icones/card_legal.svg') }}"
+                    alt=""
+                >
+            </div>
+
+        </a>
 
     </div>
 
