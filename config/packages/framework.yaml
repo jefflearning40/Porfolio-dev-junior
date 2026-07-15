@@ -13,12 +13,6 @@ framework:
     # La session démarre uniquement si elle est utilisée.
     session: true
 
-    rate_limiter:
-        contact_form:
-            policy: fixed_window
-            limit: 1                
-            interval: '10 minute'
-
     # esi: true
     # fragments: true
 
