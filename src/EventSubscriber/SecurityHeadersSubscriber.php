@@ -50,33 +50,36 @@ final class SecurityHeadersSubscriber implements EventSubscriberInterface
         );
 
         /*
-         * CSP en mode test.
+         * Content Security Policy active.
          *
-         * Elle signale les violations dans la console,
-         * mais ne bloque encore aucune ressource.
+         * Le navigateur bloque réellement les ressources
+         * qui ne respectent pas ces règles.
          */
         $contentSecurityPolicy = implode('; ', [
+            /*
+             * Par défaut, seules les ressources provenant
+             * du portfolio sont autorisées.
+             */
             "default-src 'self'",
 
             /*
-             * AssetMapper / Importmap génère des scripts intégrés
-             * et peut utiliser des URL data: pour certains imports CSS.
+             * JavaScript local et scripts intégrés nécessaires
+             * à AssetMapper / Importmap.
              */
             "script-src 'self' 'unsafe-inline' data:",
 
             /*
-             * Autorise les feuilles CSS locales et les éventuels
-             * styles intégrés nécessaires au fonctionnement actuel.
+             * Feuilles CSS locales et styles intégrés.
              */
             "style-src 'self' 'unsafe-inline'",
 
             /*
-             * Images locales, SVG et images encodées en data:.
+             * Images locales, SVG et images encodées.
              */
             "img-src 'self' data: blob:",
 
             /*
-             * Polices locales uniquement.
+             * Polices locales.
              */
             "font-src 'self' data:",
 
@@ -86,39 +89,41 @@ final class SecurityHeadersSubscriber implements EventSubscriberInterface
             "media-src 'self'",
 
             /*
-             * Autorise l'aperçu local du CV en PDF dans <object>.
+             * Autorise l'affichage local du PDF du CV
+             * dans une balise <object>.
              */
             "object-src 'self'",
 
             /*
-             * Requêtes effectuées par JavaScript vers le site.
+             * Requêtes JavaScript uniquement vers le portfolio.
              */
             "connect-src 'self'",
 
             /*
-             * Autorise seulement les iframes locales.
+             * Autorise uniquement les iframes locales.
              */
             "frame-src 'self'",
 
             /*
-             * Seul le portfolio peut intégrer ses propres pages.
+             * Le portfolio ne peut être intégré que
+             * depuis son propre domaine.
              */
             "frame-ancestors 'self'",
 
             /*
-             * Empêche la modification de l'URL de base du document.
+             * Empêche la modification de l'URL de base.
              */
             "base-uri 'self'",
 
             /*
-             * Les formulaires ne peuvent être envoyés
+             * Les formulaires ne peuvent envoyer leurs données
              * que vers le portfolio.
              */
             "form-action 'self'",
         ]);
 
         $response->headers->set(
-            'Content-Security-Policy-Report-Only',
+            'Content-Security-Policy',
             $contentSecurityPolicy
         );
     }

@@ -1,86 +1,124 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'home.title'|trans }}{% endblock %}
+{% block title %}
+    {{ 'home.title'|trans }} | My Portfolio
+{% endblock %}
 
 {% block body %}
 
-<section class="home">
+<section
+    class="home"
+    aria-labelledby="home-title"
+>
+    <h1
+        id="home-title"
+        class="visually-hidden"
+    >
+        {{ 'home.title'|trans }}
+    </h1>
 
-    <video class="home-video" autoplay muted loop playsinline>
+    <video
+        class="home-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        aria-hidden="true"
+    >
         <source
             src="{{ asset('videos/fondecranvscmp4.mp4') }}"
             type="video/mp4"
         >
     </video>
 
-    <div class="home-cards">
-
+    <nav
+        class="home-cards"
+        aria-label="{{ 'home.title'|trans }}"
+    >
         <a
-            href="{{ path('app_projects', {'_locale': app.request.locale}) }}"
+            href="{{ path('app_projects', {
+                '_locale': app.request.locale
+            }) }}"
             class="home-card"
         >
+            <span>
+                {{ 'home.projects'|trans|raw }}
+            </span>
 
-            <span>{{ 'home.projects'|trans|raw }}</span>
-
-            <div class="home-card-icon">
+            <div
+                class="home-card-icon"
+                aria-hidden="true"
+            >
                 <img
                     src="{{ asset('images/icones/card_projects.svg') }}"
                     alt=""
                 >
             </div>
-
         </a>
 
         <a
-            href="{{ path('app_skills', {'_locale': app.request.locale}) }}"
+            href="{{ path('app_skills', {
+                '_locale': app.request.locale
+            }) }}"
             class="home-card"
         >
+            <span>
+                {{ 'home.tools'|trans|raw }}
+            </span>
 
-            <span>{{ 'home.tools'|trans|raw }}</span>
-
-            <div class="home-card-icon">
+            <div
+                class="home-card-icon"
+                aria-hidden="true"
+            >
                 <img
                     src="{{ asset('images/icones/card_tool.svg') }}"
                     alt=""
                 >
             </div>
-
         </a>
 
         <a
-            href="{{ path('app_cv', {'_locale': app.request.locale}) }}"
+            href="{{ path('app_cv', {
+                '_locale': app.request.locale
+            }) }}"
             class="home-card"
         >
+            <span>
+                {{ 'home.cv'|trans }}
+            </span>
 
-            <span>{{ 'home.cv'|trans }}</span>
-
-            <div class="home-card-icon">
+            <div
+                class="home-card-icon"
+                aria-hidden="true"
+            >
                 <img
                     src="{{ asset('images/icones/card_cv.svg') }}"
                     alt=""
                 >
             </div>
-
         </a>
 
         <a
-            href="{{ path('app_legal_mentions', {'_locale': app.request.locale}) }}"
+            href="{{ path('app_legal_mentions', {
+                '_locale': app.request.locale
+            }) }}"
             class="home-card"
         >
+            <span>
+                {{ 'home.legal'|trans|raw }}
+            </span>
 
-            <span>{{ 'home.legal'|trans|raw }}</span>
-
-            <div class="home-card-icon">
+            <div
+                class="home-card-icon"
+                aria-hidden="true"
+            >
                 <img
                     src="{{ asset('images/icones/card_legal.svg') }}"
                     alt=""
                 >
             </div>
-
         </a>
-
-    </div>
-
+    </nav>
 </section>
 
 {% endblock %}

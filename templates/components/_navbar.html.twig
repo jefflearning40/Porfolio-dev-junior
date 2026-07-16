@@ -1,65 +1,162 @@
 <header class="site-header">
 
-    <nav class="navbar">
+    <nav
+        class="navbar"
+        aria-label="Navigation principale"
+    >
 
-        <a href="{{ path('app_home', {'_locale': app.request.locale}) }}" class="navbar-logo">
-            <img src="{{ asset('images/logos/logo_myPortFolio.svg') }}" alt="Logo MyPortfolio">
+        <a
+            href="{{ path('app_home', {
+                '_locale': app.request.locale
+            }) }}"
+            class="navbar-logo"
+            aria-label="Retour à l’accueil"
+        >
+            <img
+                src="{{ asset('images/logos/logo_myPortFolio.svg') }}"
+                alt=""
+                aria-hidden="true"
+            >
         </a>
 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-hidden="true"
+            tabindex="-1"
+        >
 
-        <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <label
+            for="menu-toggle"
+            class="hamburger"
+            aria-label="Ouvrir ou fermer le menu principal"
+        >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </label>
 
-        <ul class="navbar-menu">
+        <ul
+            class="navbar-menu"
+            id="navbar-menu"
+        >
 
-            <li><a href="{{ path('app_home', {'_locale': app.request.locale}) }}">{{ 'navbar.home'|trans }}</a></li>
+            <li>
+                <a
+                    href="{{ path('app_home', {
+                        '_locale': app.request.locale
+                    }) }}"
+                >
+                    {{ 'navbar.home'|trans }}
+                </a>
+            </li>
 
-            <li><a href="{{ path('app_skills', {'_locale': app.request.locale}) }}">{{ 'navbar.skills'|trans }}</a></li>
+            <li>
+                <a
+                    href="{{ path('app_skills', {
+                        '_locale': app.request.locale
+                    }) }}"
+                >
+                    {{ 'navbar.skills'|trans }}
+                </a>
+            </li>
 
-            <li><a href="{{ path('app_projects', {'_locale': app.request.locale}) }}">{{ 'navbar.projects'|trans }}</a></li>
+            <li>
+                <a
+                    href="{{ path('app_projects', {
+                        '_locale': app.request.locale
+                    }) }}"
+                >
+                    {{ 'navbar.projects'|trans }}
+                </a>
+            </li>
 
-            <li><a href="{{ path('app_contact', {'_locale': app.request.locale}) }}">{{ 'navbar.contact'|trans }}</a></li>
+            <li>
+                <a
+                    href="{{ path('app_contact', {
+                        '_locale': app.request.locale
+                    }) }}"
+                >
+                    {{ 'navbar.contact'|trans }}
+                </a>
+            </li>
 
-            <li><a href="{{ path('app_cv', {'_locale': app.request.locale}) }}">{{ 'navbar.cv'|trans }}</a></li>
+            <li>
+                <a
+                    href="{{ path('app_cv', {
+                        '_locale': app.request.locale
+                    }) }}"
+                >
+                    {{ 'navbar.cv'|trans }}
+                </a>
+            </li>
 
             <li class="mobile-github">
-    <a
-        href="https://github.com/jefflearning40"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        GitHub
-    </a>
-</li>
+                <a
+                    href="https://github.com/jefflearning40"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Ouvrir le profil GitHub dans un nouvel onglet"
+                >
+                    GitHub
+                </a>
+            </li>
 
         </ul>
 
-        <!-- FR / EN -->
-        <div class="navbar-language">
-            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale':'fr'})) }}">FR</a>
+        <nav
+            class="navbar-language"
+            aria-label="Choix de la langue"
+        >
+            <a
+                href="{{ path(
+                    app.request.attributes.get('_route'),
+                    app.request.attributes.get('_route_params')|merge({
+                        '_locale': 'fr'
+                    })
+                ) }}"
+                lang="fr"
+                hreflang="fr"
+                {% if app.request.locale == 'fr' %}
+                    aria-current="page"
+                {% endif %}
+            >
+                FR
+            </a>
 
-            <span>|</span>
+            <span aria-hidden="true">|</span>
 
-            <a href="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')|merge({'_locale':'en'})) }}">EN</a>
-        </div>
+            <a
+                href="{{ path(
+                    app.request.attributes.get('_route'),
+                    app.request.attributes.get('_route_params')|merge({
+                        '_locale': 'en'
+                    })
+                ) }}"
+                lang="en"
+                hreflang="en"
+                {% if app.request.locale == 'en' %}
+                    aria-current="page"
+                {% endif %}
+            >
+                EN
+            </a>
+        </nav>
 
-        <!-- GitHub -->
-       <a
-    href="https://github.com/jefflearning40"
-    class="navbar-github"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="GitHub"
->
-    <img
-        src="{{ asset('images/icones/github-icon-2.svg') }}"
-        alt="GitHub"
-    >
-</a>
+        <a
+            href="https://github.com/jefflearning40"
+            class="navbar-github"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir le profil GitHub dans un nouvel onglet"
+        >
+            <img
+                src="{{ asset('images/icones/github-icon-2.svg') }}"
+                alt=""
+                aria-hidden="true"
+            >
+        </a>
 
     </nav>
 

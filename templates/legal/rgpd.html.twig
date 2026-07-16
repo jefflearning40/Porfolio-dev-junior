@@ -6,28 +6,36 @@
 
 {% block body %}
 
-<section class="legal-page">
+<section
+    class="legal-page"
+    aria-labelledby="rgpd-title"
+    aria-describedby="rgpd-intro"
+>
 
     <div class="legal-container">
 
         <header class="legal-header">
 
-            <h1>{{ 'rgpd.title'|trans }}</h1>
+            <h1 id="rgpd-title">
+                {{ 'rgpd.title'|trans }}
+            </h1>
 
-            <p>
+            <p id="rgpd-intro">
                 {{ 'rgpd.intro'|trans }}
             </p>
 
         </header>
 
-        <div class="accordion-group legal-accordion-group">
+        <div
+            class="accordion-group legal-accordion-group"
+            aria-label="{{ 'rgpd.title'|trans }}"
+        >
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
                 open
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -43,14 +51,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -66,14 +72,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -89,14 +93,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -112,14 +114,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -135,14 +135,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -158,14 +156,12 @@
                     </p>
 
                 </div>
-
             </details>
 
             <details
                 name="rgpd-accordion"
                 class="accordion legal-accordion"
             >
-
                 <summary class="accordion-summary legal-accordion-summary">
 
                     <span class="legal-accordion-title">
@@ -181,7 +177,6 @@
                     </p>
 
                 </div>
-
             </details>
 
         </div>

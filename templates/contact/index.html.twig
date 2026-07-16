@@ -6,23 +6,50 @@
 
 {% block body %}
 
-<section class="contact-page">
-
+<section
+    class="contact-page"
+    aria-labelledby="contact-title"
+    aria-describedby="contact-intro"
+>
     <div class="contact-container">
 
         <header class="contact-header">
 
-            <h1>{{ 'contact.title'|trans }}</h1>
+            <h1 id="contact-title">
+                {{ 'contact.title'|trans }}
+            </h1>
 
-            <p>
+            <p id="contact-intro">
                 {{ 'contact.intro'|trans }}
             </p>
 
         </header>
 
+        {% for message in app.flashes('success') %}
+            <div
+                class="contact-flash"
+                role="status"
+                aria-live="polite"
+            >
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+
+        {% for message in app.flashes('error') %}
+            <div
+                class="contact-flash contact-flash-error"
+                role="alert"
+                aria-live="assertive"
+            >
+                {{ message|trans }}
+            </div>
+        {% endfor %}
+
         {{ form_start(contact_form, {
             attr: {
-                class: 'contact-form'
+                class: 'contact-form',
+                'aria-labelledby': 'contact-title',
+                'aria-describedby': 'contact-intro'
             }
         }) }}
 
@@ -48,12 +75,14 @@
 
             </div>
 
-            <div class="contact-honeypot" aria-hidden="true">
+            {# Champ invisible destiné à piéger les robots #}
 
+            <div
+                class="contact-honeypot"
+                aria-hidden="true"
+            >
                 {{ form_widget(contact_form.website) }}
-
                 {{ form_errors(contact_form.website) }}
-
             </div>
 
             <div class="contact-footer">
@@ -65,18 +94,20 @@
                         {{ form_widget(contact_form.privacy) }}
 
                         <label for="{{ contact_form.privacy.vars.id }}">
-
                             {{ 'contact.form.privacy_start'|trans }}
-
-                            <a
-                                href="#"
-                                class="contact-privacy-link"
-                                data-privacy-modal-open
-                            >
-                                {{ 'contact.form.privacy_link'|trans }}
-                            </a>.
-
                         </label>
+
+                        <button
+                            type="button"
+                            class="contact-privacy-link"
+                            data-privacy-modal-open
+                            aria-haspopup="dialog"
+                            aria-controls="privacy-modal"
+                        >
+                            {{ 'contact.form.privacy_link'|trans }}
+                        </button>
+
+                        <span aria-hidden="true">.</span>
 
                         {{ form_errors(contact_form.privacy) }}
 
@@ -95,10 +126,10 @@
         {{ form_end(contact_form) }}
 
     </div>
-
 </section>
 
 <div
+    id="privacy-modal"
     class="privacy-modal"
     data-privacy-modal
     aria-hidden="true"
@@ -106,6 +137,7 @@
     <div
         class="privacy-modal-overlay"
         data-privacy-modal-close
+        aria-hidden="true"
     ></div>
 
     <div
@@ -113,56 +145,113 @@
         role="dialog"
         aria-modal="true"
         aria-labelledby="privacy-modal-title"
+        aria-describedby="privacy-modal-description"
+        tabindex="-1"
     >
-
         <button
             type="button"
             class="privacy-modal-close"
             data-privacy-modal-close
             aria-label="{{ 'contact.modal.close'|trans }}"
         >
-            ×
+            <span aria-hidden="true">×</span>
         </button>
 
         <h2 id="privacy-modal-title">
             {{ 'rgpd.title'|trans }}
         </h2>
 
+        <p
+            id="privacy-modal-description"
+            class="visually-hidden"
+        >
+            {{ 'rgpd.intro'|trans }}
+        </p>
+
         <div class="privacy-modal-content">
 
-            <section>
-                <h3>{{ 'rgpd.controller.title'|trans }}</h3>
-                <p>{{ 'rgpd.controller.text'|trans }}</p>
+            <section aria-labelledby="privacy-controller-title">
+
+                <h3 id="privacy-controller-title">
+                    {{ 'rgpd.controller.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.controller.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.data.title'|trans }}</h3>
-                <p>{{ 'rgpd.data.text'|trans }}</p>
+            <section aria-labelledby="privacy-data-title">
+
+                <h3 id="privacy-data-title">
+                    {{ 'rgpd.data.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.data.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.use.title'|trans }}</h3>
-                <p>{{ 'rgpd.use.text'|trans }}</p>
+            <section aria-labelledby="privacy-use-title">
+
+                <h3 id="privacy-use-title">
+                    {{ 'rgpd.use.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.use.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.storage.title'|trans }}</h3>
-                <p>{{ 'rgpd.storage.text'|trans }}</p>
+            <section aria-labelledby="privacy-storage-title">
+
+                <h3 id="privacy-storage-title">
+                    {{ 'rgpd.storage.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.storage.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.sharing.title'|trans }}</h3>
-                <p>{{ 'rgpd.sharing.text'|trans }}</p>
+            <section aria-labelledby="privacy-sharing-title">
+
+                <h3 id="privacy-sharing-title">
+                    {{ 'rgpd.sharing.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.sharing.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.rights.title'|trans }}</h3>
-                <p>{{ 'rgpd.rights.text'|trans }}</p>
+            <section aria-labelledby="privacy-rights-title">
+
+                <h3 id="privacy-rights-title">
+                    {{ 'rgpd.rights.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.rights.text'|trans }}
+                </p>
+
             </section>
 
-            <section>
-                <h3>{{ 'rgpd.cookies.title'|trans }}</h3>
-                <p>{{ 'rgpd.cookies.text'|trans }}</p>
+            <section aria-labelledby="privacy-cookies-title">
+
+                <h3 id="privacy-cookies-title">
+                    {{ 'rgpd.cookies.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.cookies.text'|trans }}
+                </p>
+
             </section>
 
         </div>
@@ -176,7 +265,6 @@
         </button>
 
     </div>
-
 </div>
 
 {% endblock %}

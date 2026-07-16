@@ -6,21 +6,30 @@
 
 {% block body %}
 
-<section class="legal-page">
+<section
+    class="legal-page"
+    aria-labelledby="legal-title"
+    aria-describedby="legal-intro"
+>
 
     <div class="legal-container">
 
         <header class="legal-header">
 
-            <h1>{{ 'legal_mentions.title'|trans }}</h1>
+            <h1 id="legal-title">
+                {{ 'legal_mentions.title'|trans }}
+            </h1>
 
-            <p>
+            <p id="legal-intro">
                 {{ 'legal_mentions.intro'|trans }}
             </p>
 
         </header>
 
-        <div class="accordion-group legal-accordion-group">
+        <div
+            class="accordion-group legal-accordion-group"
+            aria-label="{{ 'legal_mentions.title'|trans }}"
+        >
 
             <details
                 name="mentions-accordion"
@@ -141,6 +150,7 @@
                                 '_locale': app.request.locale
                             }) }}"
                             class="legal-contact-button"
+                            aria-label="{{ 'legal_mentions.contact.button'|trans }}"
                         >
                             {{ 'legal_mentions.contact.button'|trans }}
                         </a>

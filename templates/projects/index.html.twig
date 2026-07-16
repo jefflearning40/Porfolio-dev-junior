@@ -6,23 +6,35 @@
 
 {% block body %}
 
-<section class="projects">
+<section
+    class="projects"
+    aria-labelledby="projects-title"
+    aria-describedby="projects-intro"
+>
 
     <div class="projects-container">
 
         <header class="projects-header">
 
-            <h1>{{ 'projects.title'|trans }}</h1>
+            <h1 id="projects-title">
+                {{ 'projects.title'|trans }}
+            </h1>
 
-            <p>
+            <p id="projects-intro">
                 {{ 'projects.intro'|trans }}
             </p>
 
         </header>
 
-        <div class="accordion-group projects-accordion">
+        <div
+            class="accordion-group projects-accordion"
+            aria-label="{{ 'projects.title'|trans }}"
+        >
 
             {% for project in projects %}
+
+                {% set project_name = project.name_key|trans %}
+                {% set project_id = 'project-' ~ loop.index %}
 
                 <details
                     name="projects-accordion"
@@ -30,18 +42,24 @@
                     {% if loop.first %}open{% endif %}
                 >
 
-                    <summary class="accordion-summary project-accordion-summary">
+                    <summary
+                        class="accordion-summary project-accordion-summary"
+                        aria-describedby="{{ project_id }}-status"
+                    >
 
                         <span class="project-accordion-title">
-                            {{ project.name_key|trans }}
+                            {{ project_name }}
                         </span>
 
-                        <span class="
-                            project-accordion-status
-                            {% if project.in_progress %}
-                                project-accordion-status--progress
-                            {% endif %}
-                        ">
+                        <span
+                            id="{{ project_id }}-status"
+                            class="
+                                project-accordion-status
+                                {% if project.in_progress %}
+                                    project-accordion-status--progress
+                                {% endif %}
+                            "
+                        >
                             {{ project.status_key|trans }}
                         </span>
 
@@ -59,31 +77,34 @@
 
                                 <div class="project-accordion-footer">
 
-                                    <ul class="project-accordion-technologies">
+                                    <ul
+                                        class="project-accordion-technologies"
+                                        aria-label="Technologies utilisées pour {{ project_name }}"
+                                    >
 
                                         {% for technology in project.technologies %}
 
                                             <li>
-
                                                 <img
                                                     src="{{ asset(technology.icon) }}"
                                                     alt="{{ technology.name }}"
-                                                    title="{{ technology.name }}"
                                                 >
-
                                             </li>
 
                                         {% endfor %}
 
                                     </ul>
 
-                                    <div class="project-accordion-links">
+                                    <div
+                                        class="project-accordion-links"
+                                        aria-label="Liens du projet {{ project_name }}"
+                                    >
 
                                         <a
                                             href="{{ project.github_url }}"
                                             class="project-link project-link--github"
                                             aria-label="{{ 'projects.links.github_aria'|trans({
-                                                '%project%': project.name_key|trans
+                                                '%project%': project_name
                                             }) }}"
                                         >
 
@@ -103,7 +124,7 @@
                                             href="{{ project.website_url }}"
                                             class="project-link project-link--website"
                                             aria-label="{{ 'projects.links.website_aria'|trans({
-                                                '%project%': project.name_key|trans
+                                                '%project%': project_name
                                             }) }}"
                                         >
 
@@ -125,16 +146,18 @@
 
                             </div>
 
-                            <div class="
-                                project-accordion-logo
-                                {% if project.dark_logo_background %}
-                                    project-accordion-logo--black
-                                {% endif %}
-                            ">
+                            <div
+                                class="
+                                    project-accordion-logo
+                                    {% if project.dark_logo_background %}
+                                        project-accordion-logo--black
+                                    {% endif %}
+                                "
+                            >
 
                                 <img
                                     src="{{ asset(project.logo) }}"
-                                    alt="{{ project.name_key|trans }}"
+                                    alt="Logo du projet {{ project_name }}"
                                 >
 
                             </div>

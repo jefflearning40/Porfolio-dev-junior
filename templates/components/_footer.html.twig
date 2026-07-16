@@ -4,26 +4,44 @@
         &copy; 2026 Jean-François
     </div>
 
-    <nav class="footer-links">
-        <a href="{{ path('app_legal_mentions') }}">Mentions légales</a>
+    <nav
+        class="footer-links"
+        aria-label="Liens légaux"
+    >
+        <a
+            href="{{ path('app_legal_mentions', {
+                '_locale': app.request.locale
+            }) }}"
+        >
+            Mentions légales
+        </a>
 
-        <span>|</span>
+        <span aria-hidden="true">|</span>
 
-        <a href="{{ path('app_rgpd') }}">RGPD</a>
+        <a
+            href="{{ path('app_rgpd', {
+                '_locale': app.request.locale
+            }) }}"
+        >
+            RGPD
+        </a>
     </nav>
 
-   <div class="footer-social">
-    <a
-        href="https://www.linkedin.com/in/jean-francois-ledeunf-875729233/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Profil LinkedIn de Jean-François Delhomme"
-    >
-        <img
-            src="{{ asset('images/icones/linkedin.svg') }}"
-            alt="LinkedIn"
+    <div class="footer-social">
+
+        <a
+            href="https://www.linkedin.com/in/jean-francois-ledeunf-875729233/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ouvrir le profil LinkedIn de Jean-François dans un nouvel onglet"
         >
-    </a>
-</div>
+            <img
+                src="{{ asset('images/icones/linkedin.svg') }}"
+                alt=""
+                aria-hidden="true"
+            >
+        </a>
+
+    </div>
 
 </footer>

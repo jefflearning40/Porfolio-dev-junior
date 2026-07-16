@@ -1,61 +1,270 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'cv.page_title'|trans }} | My Portfolio
+    {{ 'contact.page_title'|trans }} | My Portfolio
 {% endblock %}
 
 {% block body %}
 
-<section class="cv-page">
+<section
+    class="contact-page"
+    aria-labelledby="contact-title"
+    aria-describedby="contact-intro"
+>
+    <div class="contact-container">
 
-    <div class="cv-container">
+        <header class="contact-header">
 
-        <header class="cv-header">
+            <h1 id="contact-title">
+                {{ 'contact.title'|trans }}
+            </h1>
 
-            <h1>{{ 'cv.title'|trans }}</h1>
-
-            <p>
-                {{ 'cv.intro'|trans }}
+            <p id="contact-intro">
+                {{ 'contact.intro'|trans }}
             </p>
 
         </header>
 
-        <div class="cv-card">
+        {% for message in app.flashes('success') %}
+            <div
+                class="contact-flash"
+                role="status"
+                aria-live="polite"
+            >
+                {{ message|trans }}
+            </div>
+        {% endfor %}
 
-            <div class="cv-preview">
+        {% for message in app.flashes('error') %}
+            <div
+                class="contact-flash contact-flash-error"
+                role="alert"
+                aria-live="assertive"
+            >
+                {{ message|trans }}
+            </div>
+        {% endfor %}
 
-                <object
-                    data="{{ asset('documents/cv-jean-francois.pdf') }}"
-                    type="application/pdf"
-                    class="cv-document"
-                >
-                    <p>
-                        {{ 'cv.pdf_unavailable'|trans }}
+        {{ form_start(contact_form, {
+            attr: {
+                class: 'contact-form',
+                'aria-labelledby': 'contact-title',
+                'aria-describedby': 'contact-intro'
+            }
+        }) }}
 
-                        <a href="{{ asset('documents/cv-jean-francois.pdf') }}">
-                            {{ 'cv.download'|trans }}
-                        </a>
-                    </p>
-                </object>
+            <div class="contact-grid">
+
+                <div class="contact-column">
+
+                    {{ form_row(contact_form.lastName) }}
+
+                    {{ form_row(contact_form.firstName) }}
+
+                    {{ form_row(contact_form.email) }}
+
+                    {{ form_row(contact_form.subject) }}
+
+                </div>
+
+                <div class="contact-column">
+
+                    {{ form_row(contact_form.message) }}
+
+                </div>
 
             </div>
 
-            <div class="cv-actions">
+            {# Champ invisible destiné à piéger les robots #}
 
-                <a
-                    href="{{ asset('documents/cv-jean-francois.pdf') }}"
-                    class="cv-download"
-                    download
-                >
-                    {{ 'cv.download'|trans }}
-                </a>
+            <div
+                class="contact-honeypot"
+                aria-hidden="true"
+            >
+                {{ form_widget(contact_form.website) }}
+                {{ form_errors(contact_form.website) }}
+            </div>
+
+            <div class="contact-footer">
+
+                <div class="contact-privacy">
+
+                    <div class="contact-privacy-field">
+
+                        {{ form_widget(contact_form.privacy) }}
+
+                        <label for="{{ contact_form.privacy.vars.id }}">
+                            {{ 'contact.form.privacy_start'|trans }}
+                        </label>
+
+                        <button
+                            type="button"
+                            class="contact-privacy-link"
+                            data-privacy-modal-open
+                            aria-haspopup="dialog"
+                            aria-controls="privacy-modal"
+                        >
+                            {{ 'contact.form.privacy_link'|trans }}
+                        </button>
+
+                        <span aria-hidden="true">.</span>
+
+                        {{ form_errors(contact_form.privacy) }}
+
+                    </div>
+
+                </div>
+
+                <div class="contact-submit">
+
+                    {{ form_row(contact_form.submit) }}
+
+                </div>
 
             </div>
+
+        {{ form_end(contact_form) }}
+
+    </div>
+</section>
+
+<div
+    id="privacy-modal"
+    class="privacy-modal"
+    data-privacy-modal
+    aria-hidden="true"
+>
+    <div
+        class="privacy-modal-overlay"
+        data-privacy-modal-close
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="privacy-modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-modal-title"
+        aria-describedby="privacy-modal-description"
+        tabindex="-1"
+    >
+        <button
+            type="button"
+            class="privacy-modal-close"
+            data-privacy-modal-close
+            aria-label="{{ 'contact.modal.close'|trans }}"
+        >
+            <span aria-hidden="true">×</span>
+        </button>
+
+        <h2 id="privacy-modal-title">
+            {{ 'rgpd.title'|trans }}
+        </h2>
+
+        <p
+            id="privacy-modal-description"
+            class="visually-hidden"
+        >
+            {{ 'rgpd.intro'|trans }}
+        </p>
+
+        <div class="privacy-modal-content">
+
+            <section aria-labelledby="privacy-controller-title">
+
+                <h3 id="privacy-controller-title">
+                    {{ 'rgpd.controller.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.controller.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-data-title">
+
+                <h3 id="privacy-data-title">
+                    {{ 'rgpd.data.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.data.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-use-title">
+
+                <h3 id="privacy-use-title">
+                    {{ 'rgpd.use.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.use.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-storage-title">
+
+                <h3 id="privacy-storage-title">
+                    {{ 'rgpd.storage.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.storage.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-sharing-title">
+
+                <h3 id="privacy-sharing-title">
+                    {{ 'rgpd.sharing.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.sharing.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-rights-title">
+
+                <h3 id="privacy-rights-title">
+                    {{ 'rgpd.rights.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.rights.text'|trans }}
+                </p>
+
+            </section>
+
+            <section aria-labelledby="privacy-cookies-title">
+
+                <h3 id="privacy-cookies-title">
+                    {{ 'rgpd.cookies.title'|trans }}
+                </h3>
+
+                <p>
+                    {{ 'rgpd.cookies.text'|trans }}
+                </p>
+
+            </section>
 
         </div>
 
-    </div>
+        <button
+            type="button"
+            class="privacy-modal-button"
+            data-privacy-modal-close
+        >
+            {{ 'contact.modal.close_button'|trans }}
+        </button>
 
-</section>
+    </div>
+</div>
 
 {% endblock %}

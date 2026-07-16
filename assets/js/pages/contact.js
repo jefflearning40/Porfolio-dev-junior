@@ -9,6 +9,9 @@ const initContactPage = () => {
     const closeModalButtons = document.querySelectorAll(
         "[data-privacy-modal-close]"
     );
+    const firstCloseButton = modal?.querySelector(
+        ".privacy-modal-close"
+    );
 
     /* ===========================
        BOUTON ENVOYER
@@ -21,22 +24,14 @@ const initContactPage = () => {
 
         updateSubmitButton();
 
-        privacyCheckbox.removeEventListener(
-            "change",
-            updateSubmitButton
-        );
-
-        privacyCheckbox.addEventListener(
-            "change",
-            updateSubmitButton
-        );
+        privacyCheckbox.onchange = updateSubmitButton;
     }
 
     /* ===========================
        MODAL RGPD
     =========================== */
 
-    if (!modal || !openModalButton) {
+    if (!modal || !openModalButton || !firstCloseButton) {
         return;
     }
 
@@ -47,13 +42,27 @@ const initContactPage = () => {
         modal.setAttribute("aria-hidden", "false");
 
         document.body.classList.add("modal-open");
+
+        firstCloseButton.focus();
     };
 
     const closeModal = () => {
+        /*
+         * Retire d’abord le focus du modal.
+         */
+        if (modal.contains(document.activeElement)) {
+            document.activeElement.blur();
+        }
+
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
 
         document.body.classList.remove("modal-open");
+
+        /*
+         * Rend ensuite le focus au lien d’ouverture.
+         */
+        openModalButton.focus();
     };
 
     openModalButton.onclick = openModal;
