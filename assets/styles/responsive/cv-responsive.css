@@ -1,0 +1,81 @@
+/* ===========================
+   TABLETTE
+=========================== */
+
+@media screen and (max-width: 1100px) {
+    .cv-page {
+        padding: 45px 20px 60px;
+    }
+
+    .cv-header {
+        margin-bottom: 35px;
+    }
+
+    .cv-card {
+        padding: 24px;
+    }
+
+    .cv-preview {
+        height: 650px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .cv-page {
+        padding: 35px 15px 50px;
+    }
+
+    .cv-header {
+        margin-bottom: 30px;
+    }
+
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+
+    .cv-header p {
+        font-size: 0.95rem;
+    }
+
+    .cv-card {
+        padding: 18px;
+    }
+
+    .cv-preview {
+        height: 520px;
+    }
+
+    .cv-actions {
+        margin-top: 20px;
+    }
+
+    .cv-download {
+        width: 100%;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    .cv-page {
+        padding: 30px 10px 45px;
+    }
+
+    .cv-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .cv-card {
+        padding: 14px;
+    }
+
+    .cv-preview {
+        height: 420px;
+    }
+}

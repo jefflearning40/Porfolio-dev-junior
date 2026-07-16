@@ -1,0 +1,48 @@
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .legal-page {
+        padding: 35px 15px 50px;
+    }
+
+    .legal-header {
+        margin-bottom: 30px;
+    }
+
+    .legal-header h1 {
+        font-size: 2rem;
+    }
+
+    .legal-header p {
+        font-size: 0.95rem;
+    }
+
+    .legal-accordion-title {
+        font-size: 1.1rem;
+    }
+
+    .legal-accordion-content {
+        padding: 20px 18px 23px;
+    }
+
+    .legal-accordion-content p {
+        font-size: 0.95rem;
+        text-align: left;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    .legal-page {
+        padding: 30px 10px 45px;
+    }
+
+    .legal-header h1 {
+        font-size: 1.8rem;
+    }
+}

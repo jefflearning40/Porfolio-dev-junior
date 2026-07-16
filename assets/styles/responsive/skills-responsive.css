@@ -1,0 +1,150 @@
+/* ===========================
+   TABLETTE
+=========================== */
+
+@media screen and (max-width: 1100px) {
+    .skills-page {
+        padding: 45px 20px 60px;
+    }
+
+    .skills-header {
+        margin-bottom: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .skills-card {
+        min-width: 0;
+        padding: 22px;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .skill-item {
+        min-width: 0;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .skills-page {
+        width: 100%;
+        padding: 35px 15px 50px;
+
+        overflow-x: hidden;
+    }
+
+    .skills-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .skills-header {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .skills-header h1 {
+        font-size: 2rem;
+    }
+
+    .skills-header p {
+        font-size: 0.95rem;
+    }
+
+    .skills-grid {
+        width: 100%;
+
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .skills-card {
+        width: 100%;
+        min-width: 0;
+        padding: 18px;
+    }
+
+    .skills-card h2 {
+        margin-bottom: 18px;
+
+        font-size: 1.35rem;
+        text-align: center;
+    }
+
+    .skills-list {
+        width: 100%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .skill-item {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 8px;
+    }
+
+    .skill-item img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .skill-item span {
+        max-width: 100%;
+
+        font-size: 0.85rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    .skills-page {
+        padding: 30px 10px 45px;
+    }
+
+    .skills-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .skills-card {
+        padding: 14px;
+    }
+
+    .skills-card h2 {
+        margin-bottom: 16px;
+
+        font-size: 1.2rem;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .skill-item {
+        padding: 10px 6px;
+    }
+
+    .skill-item img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .skill-item span {
+        font-size: 0.78rem;
+    }
+}

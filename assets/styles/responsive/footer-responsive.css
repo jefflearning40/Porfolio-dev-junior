@@ -1,0 +1,16 @@
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}

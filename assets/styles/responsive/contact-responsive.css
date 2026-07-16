@@ -1,0 +1,121 @@
+/* ===========================
+   TABLETTE
+=========================== */
+
+@media screen and (max-width: 1100px) {
+    .privacy-modal {
+        padding: 18px;
+    }
+
+    .privacy-modal-dialog {
+        max-width: 700px;
+        max-height: 86vh;
+        padding: 28px;
+    }
+
+    .privacy-modal-dialog h2 {
+        font-size: 1.85rem;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .privacy-modal {
+        padding: 12px;
+    }
+
+    .privacy-modal-dialog {
+        max-width: 100%;
+        max-height: 88vh;
+        padding: 24px 18px 20px;
+    }
+
+    .privacy-modal-dialog h2 {
+        margin-right: 42px;
+
+        font-size: 1.6rem;
+    }
+
+    .privacy-modal-content section {
+        margin-bottom: 22px;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .privacy-modal-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .privacy-modal-close {
+        top: 12px;
+        right: 12px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 1.3rem;
+    }
+
+    .privacy-modal-button {
+        width: 100%;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    .privacy-modal {
+        padding: 8px;
+    }
+
+    .privacy-modal-dialog {
+        max-height: 92vh;
+        padding: 22px 14px 18px;
+    }
+
+    .privacy-modal-dialog h2 {
+        margin-right: 38px;
+
+        font-size: 1.4rem;
+    }
+
+    .privacy-modal-content section {
+        margin-bottom: 20px;
+    }
+
+    .privacy-modal-content h3 {
+        font-size: 1rem;
+    }
+
+    .privacy-modal-content p {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .privacy-modal-close {
+        top: 10px;
+        right: 10px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 1.2rem;
+    }
+
+    .privacy-modal-button {
+        min-height: 44px;
+        margin-top: 20px;
+    }
+}
