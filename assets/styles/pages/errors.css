@@ -1,0 +1,136 @@
+/* ===========================
+   PAGES D'ERREUR
+=========================== */
+
+.error-main {
+    min-height: 100vh;
+}
+
+.error-page {
+    min-height: 100vh;
+    padding: 50px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            var(--color-dark) 0%,
+            var(--color-black) 75%
+        );
+
+    color: var(--color-white);
+}
+
+.error-container {
+    width: 100%;
+    max-width: 760px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.error-logo {
+    width: 300px;
+    max-width: 70%;
+    height: auto;
+
+    margin-bottom: 42px;
+}
+
+.error-code {
+    margin-bottom: 10px;
+
+    color: var(--color-white);
+
+    font-family: var(--font-code);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.error-container h1 {
+    margin-bottom: 18px;
+
+    color: var(--color-white);
+
+    font-family: var(--font-primary);
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.error-description {
+    max-width: 620px;
+    margin-bottom: 34px;
+
+    color: var(--color-white);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.error-home-link {
+    min-width: 230px;
+    min-height: 54px;
+    padding: 12px 26px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--color-blue-light);
+    background-color: transparent;
+
+    border: 2px solid var(--color-blue);
+    border-radius: 999px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 12px var(--color-blue),
+        inset 0 0 8px transparent;
+
+    transition:
+        color var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.error-home-link:hover,
+.error-home-link:focus-visible {
+    color: var(--color-black);
+    background-color: var(--color-blue-light);
+    border-color: var(--color-cyan);
+
+    box-shadow:
+        0 0 20px var(--color-cyan),
+        inset 0 0 8px var(--color-white);
+
+    transform: translateY(-3px);
+}
+
+.error-home-link:focus-visible {
+    outline: 3px solid var(--color-yellow);
+    outline-offset: 5px;
+}
+
+.error-home-icon {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}

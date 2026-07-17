@@ -1,0 +1,94 @@
+/* ===========================
+   TABLETTE
+=========================== */
+
+@media screen and (max-width: 1100px) {
+    .error-page {
+        padding: 45px 20px;
+    }
+
+    .error-logo {
+        width: 260px;
+        margin-bottom: 36px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media screen and (max-width: 768px) {
+    .error-page {
+        min-height: 100svh;
+        padding: 35px 16px;
+    }
+
+    .error-container {
+        max-width: 520px;
+    }
+
+    .error-logo {
+        width: 220px;
+        max-width: 65%;
+        margin-bottom: 32px;
+    }
+
+    .error-code {
+        font-size: 1.35rem;
+    }
+
+    .error-container h1 {
+        margin-bottom: 16px;
+
+        font-size: 2.2rem;
+    }
+
+    .error-description {
+        max-width: 430px;
+        margin-bottom: 30px;
+
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .error-home-link {
+        min-width: 210px;
+        min-height: 50px;
+        padding: 11px 22px;
+    }
+}
+
+/* ===========================
+   TRÈS PETIT MOBILE
+=========================== */
+
+@media screen and (max-width: 420px) {
+    .error-page {
+        padding: 28px 12px;
+    }
+
+    .error-logo {
+        width: 175px;
+        max-width: 70%;
+        margin-bottom: 28px;
+    }
+
+    .error-code {
+        font-size: 1.2rem;
+    }
+
+    .error-container h1 {
+        font-size: 1.85rem;
+    }
+
+    .error-description {
+        margin-bottom: 26px;
+
+        font-size: 0.95rem;
+    }
+
+    .error-home-link {
+        width: 100%;
+        max-width: 280px;
+    }
+}

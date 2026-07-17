@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Connexion | My Portfolio
+{% endblock %}
+
+{% block body %}
+
+<section class="login-page">
+
+    <div class="login-container">
+
+        <h1>Connexion administrateur</h1>
+
+        {% if error %}
+            <div
+                class="login-error"
+                role="alert"
+            >
+                {{ error.messageKey|trans(
+                    error.messageData,
+                    'security'
+                ) }}
+            </div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="login-connected">
+                Vous êtes connecté avec
+                {{ app.user.userIdentifier }}.
+
+                <a href="{{ logout_path() }}">
+                    Se déconnecter
+                </a>
+            </div>
+        {% endif %}
+
+        <form
+            method="post"
+            action="{{ path('app_login') }}"
+            data-turbo="false"
+        >
+            <div class="login-field">
+
+                <label for="inputEmail">
+                    Adresse e-mail
+                </label>
+
+                <input
+                    type="email"
+                    value="{{ last_username }}"
+                    name="email"
+                    id="inputEmail"
+                    autocomplete="email"
+                    required
+                    autofocus
+                >
+
+            </div>
+
+            <div class="login-field">
+
+                <label for="inputPassword">
+                    Mot de passe
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    id="inputPassword"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+            <input
+                type="hidden"
+                name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+            <button type="submit">
+                Se connecter
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

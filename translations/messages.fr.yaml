@@ -254,3 +254,25 @@ skills:
     backend: Back-end
     database: Bases de données
     tools: Outils
+
+errors:
+  back_home: Retour à l'accueil
+
+  404:
+    page_title: Page introuvable
+    title: Page introuvable
+    description: >
+      La ressource demandée n'existe pas
+      ou n'est plus disponible. 
+  403:
+    page_title: Accès interdit
+    title: Accès interdit
+    description: >
+      Vous ne disposez pas des autorisations nécessaires
+      pour accéder à cette ressource.    
+  500:
+    page_title: Erreur interne
+    title: Erreur interne
+    description: >
+      Une erreur inattendue est survenue lors du traitement
+      de votre demande. Veuillez réessayer ultérieurement.    

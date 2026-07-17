@@ -254,3 +254,24 @@ skills:
     backend: Back-end
     database: Databases
     tools: Tools
+errors:
+  back_home: Back to home
+
+  404:
+    page_title: Page not found
+    title: Page not found
+    description: >
+      The requested resource does not exist
+      or is no longer available.  
+  403:
+    page_title: Access denied
+    title: Access denied
+    description: >
+      You do not have permission
+      to access this resource.    
+  500:
+    page_title: Internal server error
+    title: Internal server error
+    description: >
+      An unexpected error occurred while processing
+      your request. Please try again later.      

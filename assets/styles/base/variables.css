@@ -1,7 +1,6 @@
 :root {
-
     /* ===========================
-       COULEURS
+       COULEURS GLOBALES
     =========================== */
 
     --color-black: #000;
@@ -12,12 +11,46 @@
     --color-blue-light: #00bfff;
     --color-cyan: #00d4ff;
 
+    --color-grey: #777;
+    --color-yellow: #ffd400;
+
+    /* ===========================
+       SURFACES
+    =========================== */
+
+    --color-surface-glass: rgba(255, 255, 255, 0.4);
+
+    /* ===========================
+       HOME
+    =========================== */
+
     --color-home-top: #82e6ef;
     --color-home-bottom: #178286;
     --color-home-border: #1597c8;
+    --color-home-border-hover: #53d8ff;
 
-    --color-grey: #777;
-    --color-yellow: #ffd400;
+    /* ===========================
+       PROJETS
+    =========================== */
+
+    --color-project-overlay: rgba(130, 230, 239, 0.12);
+
+    --color-project-top: #9ceef5;
+    --color-project-middle: #6fd7e4;
+    --color-project-bottom: #1b7f92;
+
+    --color-project-bg: rgba(255, 255, 255, 0.38);
+    --color-project-bg-open: rgba(255, 255, 255, 0.52);
+    --color-project-hover: rgba(255, 255, 255, 0.2);
+
+    --color-project-separator: rgba(21, 151, 200, 0.35);
+
+    --color-project-tech-bg: rgba(255, 255, 255, 0.42);
+    --color-project-tech-bg-hover: rgba(255, 255, 255, 0.7);
+    --color-project-tech-border: rgba(21, 151, 200, 0.45);
+
+    --color-project-status: rgba(0, 212, 255, 0.25);
+    --color-project-status-progress: rgba(255, 212, 0, 0.35);
 
     /* ===========================
        DIMENSIONS
@@ -28,7 +61,6 @@
 
     --logo-height: 90px;
     --github-size: 52px;
-
     --github-footer-size: 30px;
 
     /* ===========================
@@ -41,44 +73,18 @@
        OMBRES
     =========================== */
 
-    --shadow-card: 6px 7px 0 rgba(0, 0, 0, .25);
+    --shadow-card: 6px 7px 0 rgba(0, 0, 0, 0.25);
 
     /* ===========================
        TRANSITIONS
     =========================== */
 
-    --transition-fast: .25s;
+    --transition-fast: 0.25s;
+
     /* ===========================
-        TYPOGRAPHIE
+       TYPOGRAPHIE
     =========================== */
 
-        --font-primary: Arial, sans-serif;
-        --font-code: monospace;
-        /* ===========================
-         HOME
-         =========================== */
-
-         --color-home-border-hover: #53d8ff;
-         /* ===========================
-            PROJETS
-         =========================== */
-
-         --color-project-overlay: rgba(130, 230, 239, 0.12);
-         --color-project-top: #9ceef5;
-         --color-project-middle: #6fd7e4;
-         --color-project-bottom: #1b7f92;
-
-         --color-project-bg: rgba(255, 255, 255, 0.38);
-         --color-project-bg-open: rgba(255, 255, 255, 0.52);
-         --color-project-hover: rgba(255, 255, 255, 0.2);
-
-         --color-project-separator: rgba(21, 151, 200, 0.35);
-
-         --color-project-tech-bg: rgba(255, 255, 255, 0.42);
-         --color-project-tech-bg-hover: rgba(255, 255, 255, 0.7);
-         --color-project-tech-border: rgba(21, 151, 200, 0.45);
-
-         --color-project-status: rgba(0, 212, 255, 0.25);
-         --color-project-status-progress: rgba(255, 212, 0, 0.35);
-
-        }
+    --font-primary: Arial, sans-serif;
+    --font-code: monospace;
+}

@@ -1,0 +1,95 @@
+{% set error_locale = app.request.pathInfo starts with '/en' ? 'en' : 'fr' %}
+
+<!DOCTYPE html>
+
+<html lang="{{ error_locale }}">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="{{ asset('favicon.svg') }}"
+    >
+
+    <title>
+        {{ 'errors.404.page_title'|trans({}, 'messages', error_locale) }}
+        | My Portfolio
+    </title>
+
+    {{ importmap('app') }}
+</head>
+
+<body>
+
+    <main class="error-main">
+
+        <section
+            class="error-page"
+            aria-labelledby="error-title"
+            aria-describedby="error-description"
+        >
+
+            <div class="error-container">
+
+                <img
+                    src="{{ asset('images/logos/logo_myPortFolio.svg') }}"
+                    class="error-logo"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <p
+                    class="error-code"
+                    aria-hidden="true"
+                >
+                    404
+                </p>
+
+                <h1 id="error-title">
+                    {{ 'errors.404.title'|trans({}, 'messages', error_locale) }}
+                </h1>
+
+                <p
+                    id="error-description"
+                    class="error-description"
+                >
+                    {{ 'errors.404.description'|trans({}, 'messages', error_locale) }}
+                </p>
+
+                <a
+                    href="{{ path('app_home', {
+                        '_locale': error_locale
+                    }) }}"
+                    class="error-home-link"
+                >
+                    <svg
+                        class="error-home-icon"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M3 11.5 12 4l9 7.5M5.5 10v10h5v-6h3v6h5V10"
+                        />
+                    </svg>
+
+                    <span>
+                        {{ 'errors.back_home'|trans({}, 'messages', error_locale) }}
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
