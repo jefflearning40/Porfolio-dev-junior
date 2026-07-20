@@ -44,6 +44,12 @@ class DashboardController extends AbstractDashboardController
             'fa fa-folder-open'
         );
 
+        yield MenuItem::linkTo(
+            SkillCrudController::class,
+            'Compétences',
+            'fa fa-code'
+        );
+
         yield MenuItem::linkToRoute(
             'Retour au portfolio',
             'fa fa-arrow-left',

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Project;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
@@ -81,6 +82,16 @@ class ProjectCrudController extends AbstractCrudController
                 'image',
                 'Image'
             )
+                ->hideOnIndex(),
+
+            AssociationField::new(
+                'skills',
+                'Compétences'
+            )
+                ->setFormTypeOption('choice_label', 'name')
+                ->setFormTypeOption('multiple', true)
+                ->setFormTypeOption('expanded', true)
+                ->setFormTypeOption('by_reference', false)
                 ->hideOnIndex(),
 
             TextField::new(
