@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use EasyCorp\Bundle\EasyAdminBundle\Attribute\AdminDashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -15,7 +16,13 @@ class DashboardController extends AbstractDashboardController
 {
     public function index(): Response
     {
-        return parent::index();
+        return $this->render('admin/dashboard.html.twig');
+    }
+
+    public function configureAssets(): Assets
+    {
+        return Assets::new()
+            ->addAssetMapperEntry('app');
     }
 
     public function configureDashboard(): Dashboard
@@ -29,6 +36,12 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToDashboard(
             'Tableau de bord',
             'fa fa-home'
+        );
+
+        yield MenuItem::linkTo(
+            ProjectCrudController::class,
+            'Projets',
+            'fa fa-folder-open'
         );
 
         yield MenuItem::linkToRoute(

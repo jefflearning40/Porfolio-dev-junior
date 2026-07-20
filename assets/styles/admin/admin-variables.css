@@ -1,0 +1,29 @@
+:root {
+
+    /* ===========================
+       ADMIN - LAYOUT
+    =========================== */
+
+    --admin-sidebar-width: 280px;
+    --admin-header-height: 72px;
+    --admin-content-padding: 32px;
+
+    /* ===========================
+       ADMIN - CARTES
+    =========================== */
+
+    --admin-card-radius: 18px;
+    --admin-card-gap: 24px;
+
+    /* ===========================
+       ADMIN - TABLEAUX
+    =========================== */
+
+    --admin-table-row-height: 54px;
+
+    /* ===========================
+       ADMIN - FORMULAIRES
+    =========================== */
+
+    --admin-input-height: 48px;
+}

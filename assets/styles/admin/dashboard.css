@@ -1,0 +1,151 @@
+/* ===========================
+   ADMIN - DASHBOARD
+=========================== */
+
+.admin-dashboard {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 0 40px;
+}
+
+/* ---------- En-tête ---------- */
+
+.admin-dashboard__header {
+    margin-bottom: 32px;
+    padding: 28px 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-project-bg-open),
+            var(--color-surface-glass)
+        );
+
+    border: 2px solid var(--color-home-border);
+    border-radius: var(--admin-card-radius);
+    box-shadow: var(--shadow-card);
+}
+
+.admin-dashboard__header h1 {
+    margin: 0 0 10px;
+
+    color: var(--color-dark);
+    font-size: 2rem;
+}
+
+.admin-dashboard__header p {
+    margin: 0;
+
+    color: var(--color-dark);
+    font-size: 1rem;
+}
+
+/* ---------- Grille ---------- */
+
+.admin-dashboard__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--admin-card-gap);
+}
+
+/* ---------- Cartes ---------- */
+
+.admin-dashboard__card {
+    min-height: 210px;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-project-bg-open),
+            var(--color-surface-glass)
+        );
+
+    border: 2px solid var(--color-home-border);
+    border-radius: var(--admin-card-radius);
+    box-shadow: var(--shadow-card);
+
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.admin-dashboard__card:hover {
+    border-color: var(--color-home-border-hover);
+    transform: translateY(-5px);
+}
+
+.admin-dashboard__card h2 {
+    margin: 0 0 16px;
+
+    color: var(--color-dark);
+    font-size: 1.8rem;
+}
+
+.admin-dashboard__card p {
+    margin: 0 0 20px;
+
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+/* ---------- Bouton ---------- */
+
+.admin-dashboard__card .btn {
+    width: fit-content;
+    margin-top: auto;
+
+    color: var(--color-white);
+    background: var(--color-blue);
+    border: 1px solid var(--color-cyan);
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.admin-dashboard__card .btn:hover {
+    color: var(--color-white);
+    background: var(--color-blue-light);
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media screen and (max-width: 900px) {
+    .admin-dashboard__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .admin-dashboard {
+        padding-top: 12px;
+    }
+
+    .admin-dashboard__header,
+    .admin-dashboard__card {
+        padding: 20px;
+    }
+
+    .admin-dashboard__header h1 {
+        font-size: 1.6rem;
+    }
+
+    .admin-dashboard__card h2 {
+        font-size: 1.5rem;
+    }
+    .admin-dashboard__action {
+    margin-top: auto;
+
+    color: var(--color-blue);
+    font-weight: 700;
+}
+}
