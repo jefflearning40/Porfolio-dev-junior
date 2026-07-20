@@ -109,6 +109,7 @@
             class="navbar-language"
             aria-label="Choix de la langue"
         >
+
             <a
                 href="{{ path(
                     app.request.attributes.get('_route'),
@@ -142,21 +143,38 @@
             >
                 EN
             </a>
+
         </nav>
 
-        <a
-            href="https://github.com/jefflearning40"
-            class="navbar-github"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Ouvrir le profil GitHub dans un nouvel onglet"
+      {% if is_granted('ROLE_ADMIN') %}
+
+    <a
+        href="{{ path('admin') }}"
+        class="navbar-admin navbar-admin-connected"
+        aria-label="Ouvrir le tableau de bord administrateur"
+    >
+        <img
+            src="{{ asset('images/icones/admin-connected.svg') }}"
+            alt=""
+            aria-hidden="true"
         >
-            <img
-                src="{{ asset('images/icones/github-icon-2.svg') }}"
-                alt=""
-                aria-hidden="true"
-            >
-        </a>
+    </a>
+
+{% else %}
+
+    <a
+        href="{{ path('app_login') }}"
+        class="navbar-admin"
+        aria-label="Connexion administrateur"
+    >
+        <img
+            src="{{ asset('images/icones/admin.svg') }}"
+            alt=""
+            aria-hidden="true"
+        >
+    </a>
+
+{% endif %}
 
     </nav>
 

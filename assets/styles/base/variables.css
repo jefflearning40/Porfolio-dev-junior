@@ -20,6 +20,9 @@
 
     --color-surface-glass: rgba(255, 255, 255, 0.4);
 
+    --color-admin-hover: rgba(0, 212, 255, 0.12);
+    --color-admin-connected: rgba(0, 212, 255, 0.1);
+
     /* ===========================
        HOME
     =========================== */
@@ -60,8 +63,15 @@
     --footer-height: 40px;
 
     --logo-height: 90px;
+
     --github-size: 52px;
     --github-footer-size: 30px;
+
+    --admin-link-size: 48px;
+    --admin-icon-size: 38px;
+
+    --admin-link-size-mobile: 42px;
+    --admin-icon-size-mobile: 34px;
 
     /* ===========================
        RAYONS
@@ -74,6 +84,10 @@
     =========================== */
 
     --shadow-card: 6px 7px 0 rgba(0, 0, 0, 0.25);
+
+    --shadow-admin-hover: 0 0 14px rgba(0, 212, 255, 0.35);
+    --shadow-admin-connected: 0 0 12px rgba(0, 212, 255, 0.25);
+    --shadow-admin-icon: 0 0 5px rgba(0, 212, 255, 0.45);
 
     /* ===========================
        TRANSITIONS

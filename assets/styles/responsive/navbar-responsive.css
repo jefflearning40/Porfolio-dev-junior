@@ -5,27 +5,39 @@
 @media screen and (max-width: 1100px) {
     :root {
         --logo-height: 72px;
-        --github-size: 44px;
+        --admin-link-size: 44px;
+        --admin-icon-size: 34px;
     }
 
     .navbar {
-        padding: 4px 24px 0;
+        padding: 4px 20px 0;
+        gap: 18px;
     }
 
     .navbar-logo {
-        width: 150px;
+        width: 140px;
+        flex-shrink: 0;
+    }
+
+    .navbar-logo img {
+        max-width: 100%;
+        height: var(--logo-height);
     }
 
     .navbar-menu {
-        margin: 0 30px;
+        margin: 0 12px;
     }
 
     .navbar-menu a {
         font-size: 16px;
     }
 
-    .navbar-github {
-        width: 70px;
+    .navbar-language {
+        flex-shrink: 0;
+    }
+
+    .navbar-admin {
+        flex-shrink: 0;
     }
 }
 
@@ -37,36 +49,55 @@
     :root {
         --header-height: 90px;
         --logo-height: 72px;
+        --admin-link-size-mobile: 40px;
+        --admin-icon-size-mobile: 32px;
     }
 
     .navbar {
-        padding: 0 18px;
+        position: relative;
+
+        padding: 0 10px;
+        gap: 8px;
     }
+
+    /* ---------- Logo ---------- */
 
     .navbar-logo {
-        width: auto;
+        width: 115px;
+        max-width: 115px;
+
+        flex-shrink: 1;
     }
 
-    .navbar-github {
-        display: none;
+    .navbar-logo img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: var(--logo-height);
+
+        object-fit: contain;
     }
+
+    /* ---------- Hamburger ---------- */
 
     .hamburger {
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 7px;
+        gap: 6px;
+
+        flex-shrink: 0;
 
         cursor: pointer;
         z-index: 100;
     }
 
     .hamburger span {
-        width: 36px;
+        width: 32px;
         height: 4px;
 
         background: var(--color-blue-light);
@@ -77,6 +108,8 @@
             opacity var(--transition-fast) ease;
     }
 
+    /* ---------- Menu déroulant ---------- */
+
     .navbar-menu {
         position: absolute;
         top: var(--header-height);
@@ -85,6 +118,7 @@
 
         width: 100%;
         height: auto;
+
         margin: 0;
         padding: 22px 0;
 
@@ -98,6 +132,7 @@
 
         opacity: 0;
         pointer-events: none;
+
         transform: scaleY(0);
         transform-origin: top;
 
@@ -111,22 +146,58 @@
         font-size: 1.2rem;
     }
 
-    .navbar-language {
-        justify-content: center;
-    }
-
     .mobile-github {
         display: block;
     }
 
+    /* ---------- Langues ---------- */
+
+    .navbar-language {
+        margin-left: auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        flex-shrink: 0;
+    }
+
+    .navbar-language a {
+        font-size: 15px;
+    }
+
+    /* ---------- Administration ---------- */
+
+    .navbar-admin {
+        width: var(--admin-link-size-mobile);
+        height: var(--admin-link-size-mobile);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-shrink: 0;
+    }
+
+    .navbar-admin img {
+        width: var(--admin-icon-size-mobile);
+        height: var(--admin-icon-size-mobile);
+
+        display: block;
+    }
+
+    /* ---------- Ouverture du menu ---------- */
+
     .menu-toggle:checked ~ .navbar-menu {
         opacity: 1;
         pointer-events: auto;
+
         transform: scaleY(1);
     }
 
     .menu-toggle:checked + .hamburger span:nth-child(1) {
-        transform: translateY(11px) rotate(45deg);
+        transform: translateY(10px) rotate(45deg);
     }
 
     .menu-toggle:checked + .hamburger span:nth-child(2) {
@@ -134,7 +205,7 @@
     }
 
     .menu-toggle:checked + .hamburger span:nth-child(3) {
-        transform: translateY(-11px) rotate(-45deg);
+        transform: translateY(-10px) rotate(-45deg);
     }
 }
 
@@ -144,6 +215,36 @@
 
 @media screen and (max-width: 420px) {
     :root {
-        --logo-height: 62px;
+        --logo-height: 60px;
+        --admin-link-size-mobile: 36px;
+        --admin-icon-size-mobile: 28px;
+    }
+
+    .navbar {
+        padding: 0 8px;
+        gap: 6px;
+    }
+
+    .navbar-logo {
+        width: 92px;
+        max-width: 92px;
+    }
+
+    .hamburger {
+        width: 36px;
+        height: 36px;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+    }
+
+    .navbar-language {
+        gap: 3px;
+    }
+
+    .navbar-language a {
+        font-size: 14px;
     }
 }
