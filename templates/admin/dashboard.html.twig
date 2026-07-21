@@ -9,6 +9,7 @@
     <section class="admin-dashboard">
 
         <div class="admin-dashboard__header">
+
             <h1>
                 Bienvenue dans l’administration
             </h1>
@@ -16,61 +17,88 @@
             <p>
                 Gérez le contenu de votre portfolio depuis cet espace.
             </p>
+
         </div>
 
         <div class="admin-dashboard__grid">
 
             <article class="admin-dashboard__card">
+
                 <h2>Projets</h2>
 
                 <p>
-                    Ajouter, modifier ou supprimer les projets du portfolio.
+                    <strong>{{ project_count }}</strong>
+                    projet{% if project_count > 1 %}s{% endif %}
+                    enregistré{% if project_count > 1 %}s{% endif %},
+                    dont
+                    <strong>{{ published_project_count }}</strong>
+                    publié{% if published_project_count > 1 %}s{% endif %}.
                 </p>
 
-                <span class="admin-dashboard__action">
-                    Gestion bientôt disponible
-                </span>
+                <a
+                    href="{{ projects_url }}"
+                    class="btn btn-primary admin-dashboard__action"
+                >
+                    Gérer les projets
+                </a>
+
             </article>
 
             <article class="admin-dashboard__card">
+
                 <h2>Compétences</h2>
 
                 <p>
-                    Gérer les technologies et compétences affichées sur le site.
+                    <strong>{{ skill_count }}</strong>
+                    compétence{% if skill_count > 1 %}s{% endif %}
+                    disponible{% if skill_count > 1 %}s{% endif %}.
                 </p>
 
-                <span class="admin-dashboard__action">
-                    Gestion bientôt disponible
-                </span>
+                <a
+                    href="{{ skills_url }}"
+                    class="btn btn-primary admin-dashboard__action"
+                >
+                    Gérer les compétences
+                </a>
+
             </article>
 
             <article class="admin-dashboard__card">
+
                 <h2>Messages</h2>
 
                 <p>
-                    Consulter les messages envoyés depuis le formulaire de contact.
+                    <strong>{{ message_count }}</strong>
+                    message{% if message_count > 1 %}s{% endif %}
+                    reçu{% if message_count > 1 %}s{% endif %}.
                 </p>
 
-                <span class="admin-dashboard__action">
-                    Gestion bientôt disponible
-                </span>
+                <a
+                    href="{{ messages_url }}"
+                    class="btn btn-primary admin-dashboard__action"
+                >
+                    Consulter les messages
+                </a>
+
             </article>
 
             <article class="admin-dashboard__card">
+
                 <h2>Portfolio</h2>
 
                 <p>
-                    Revenir rapidement sur la partie publique du site.
+                    Ouvrir la partie publique du portfolio.
                 </p>
 
                 <a
                     href="{{ path('app_home', {
                         '_locale': 'fr'
                     }) }}"
-                    class="btn btn-primary"
+                    class="btn btn-primary admin-dashboard__action"
                 >
                     Voir le portfolio
                 </a>
+
             </article>
 
         </div>
