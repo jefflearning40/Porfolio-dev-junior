@@ -9,10 +9,13 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProjectCrudController extends AbstractCrudController
 {
@@ -26,9 +29,18 @@ class ProjectCrudController extends AbstractCrudController
         return $crud
             ->setEntityLabelInSingular('Projet')
             ->setEntityLabelInPlural('Projets')
-            ->setPageTitle(Crud::PAGE_INDEX, 'Gestion des projets')
-            ->setPageTitle(Crud::PAGE_NEW, 'Ajouter un projet')
-            ->setPageTitle(Crud::PAGE_EDIT, 'Modifier un projet')
+            ->setPageTitle(
+                Crud::PAGE_INDEX,
+                'Gestion des projets'
+            )
+            ->setPageTitle(
+                Crud::PAGE_NEW,
+                'Ajouter un projet'
+            )
+            ->setPageTitle(
+                Crud::PAGE_EDIT,
+                'Modifier un projet'
+            )
             ->setDefaultSort([
                 'displayOrder' => 'ASC',
             ])
@@ -79,20 +91,41 @@ class ProjectCrudController extends AbstractCrudController
             )
                 ->hideOnIndex(),
 
-            TextField::new(
+            Field::new(
+                'imageFile',
+                'Image'
+            )
+                ->setFormType(VichImageType::class)
+                ->setFormTypeOption('required', false)
+                ->onlyOnForms(),
+
+            ImageField::new(
                 'image',
                 'Image'
             )
-                ->hideOnIndex(),
+                ->setBasePath('/uploads/projects')
+                ->onlyOnIndex(),
 
             AssociationField::new(
                 'skills',
                 'Compétences'
             )
-                ->setFormTypeOption('choice_label', 'name')
-                ->setFormTypeOption('multiple', true)
-                ->setFormTypeOption('expanded', true)
-                ->setFormTypeOption('by_reference', false)
+                ->setFormTypeOption(
+                    'choice_label',
+                    'name'
+                )
+                ->setFormTypeOption(
+                    'multiple',
+                    true
+                )
+                ->setFormTypeOption(
+                    'expanded',
+                    true
+                )
+                ->setFormTypeOption(
+                    'by_reference',
+                    false
+                )
                 ->hideOnIndex(),
 
             BooleanField::new(
@@ -119,27 +152,27 @@ class ProjectCrudController extends AbstractCrudController
                 'Publié'
             ),
 
-           DateTimeField::new(
+            DateTimeField::new(
                 'createdAt',
-                 'Créé le'
-)
-    ->formatValue(
-        static function ($value) {
-            return $value?->format('d/m/Y H:i') ?? '—';
-        }
-    )
-    ->hideOnForm(),
+                'Créé le'
+            )
+                ->formatValue(
+                    static function ($value): string {
+                        return $value?->format('d/m/Y H:i') ?? '—';
+                    }
+                )
+                ->hideOnForm(),
 
-          DateTimeField::new(
+            DateTimeField::new(
                 'updatedAt',
                 'Modifié le'
-)
-    ->formatValue(
-        static function ($value) {
-            return $value?->format('d/m/Y H:i') ?? '—';
-        }
-    )
-    ->hideOnForm(),
+            )
+                ->formatValue(
+                    static function ($value): string {
+                        return $value?->format('d/m/Y H:i') ?? '—';
+                    }
+                )
+                ->hideOnForm(),
         ];
     }
 }

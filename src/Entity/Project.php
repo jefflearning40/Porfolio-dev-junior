@@ -8,10 +8,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Attribute as Vich;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
 #[ORM\HasLifecycleCallbacks]
+#[Vich\Uploadable]
 #[UniqueEntity(
     fields: ['slug'],
     message: 'Un projet utilise déjà ce slug.'
@@ -81,6 +84,22 @@ class Project
         maxMessage: 'Le nom de l’image ne peut pas dépasser 255 caractères.'
     )]
     private ?string $image = null;
+
+    #[Vich\UploadableField(
+        mapping: 'projects',
+        fileNameProperty: 'image'
+    )]
+    #[Assert\File(
+        maxSize: '5M',
+        mimeTypes: [
+            'image/jpeg',
+            'image/png',
+            'image/webp',
+            'image/svg+xml',
+        ],
+        mimeTypesMessage: 'Sélectionnez une image JPG, PNG, WebP ou SVG valide.'
+    )]
+    private ?File $imageFile = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\NotBlank(
@@ -209,6 +228,22 @@ class Project
     public function setImage(?string $image): static
     {
         $this->image = self::normalizeNullableString($image);
+
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(?File $imageFile): static
+    {
+        $this->imageFile = $imageFile;
+
+        if ($imageFile !== null) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
 
         return $this;
     }
