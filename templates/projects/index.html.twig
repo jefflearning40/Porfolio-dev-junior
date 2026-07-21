@@ -31,10 +31,25 @@
             aria-label="{{ 'projects.title'|trans }}"
         >
 
+            {% set skill_icons = {
+                'symfony': 'images/icones/symfony.svg',
+                'php': 'images/icones/php-6.svg',
+                'twig': 'images/icones/twig.svg',
+                'javascript': 'images/icones/javascript.svg',
+                'css': 'images/icones/css-3.svg',
+                'css3': 'images/icones/css-3.svg',
+                'html5': 'images/icones/html5.svg',
+                'react': 'images/icones/react-native-1.svg',
+                'tailwind css': 'images/icones/tailwind-css.svg',
+                'doctrine orm': 'images/icones/doctrine-orm.png',
+                'honeypot': 'images/icones/honeypot.png'
+            } %}
+
             {% for project in projects %}
 
-                {% set project_name = project.name_key|trans %}
-                {% set project_id = 'project-' ~ loop.index %}
+                {% set project_id = 'project-' ~ project.id %}
+                {% set normalized_status = project.status|lower|trim %}
+                {% set is_in_progress = normalized_status == 'en cours' %}
 
                 <details
                     name="projects-accordion"
@@ -48,19 +63,19 @@
                     >
 
                         <span class="project-accordion-title">
-                            {{ project_name }}
+                            {{ project.title }}
                         </span>
 
                         <span
                             id="{{ project_id }}-status"
                             class="
                                 project-accordion-status
-                                {% if project.in_progress %}
+                                {% if is_in_progress %}
                                     project-accordion-status--progress
                                 {% endif %}
                             "
                         >
-                            {{ project.status_key|trans }}
+                            {{ project.status }}
                         </span>
 
                     </summary>
@@ -72,73 +87,98 @@
                             <div class="project-accordion-info">
 
                                 <p class="project-accordion-description">
-                                    {{ project.description_key|trans }}
+                                    {{ project.description }}
                                 </p>
 
                                 <div class="project-accordion-footer">
 
-                                    <ul
-                                        class="project-accordion-technologies"
-                                        aria-label="Technologies utilisées pour {{ project_name }}"
-                                    >
+                                    {% if project.skills is not empty %}
 
-                                        {% for technology in project.technologies %}
+                                        <ul
+                                            class="project-accordion-technologies"
+                                            aria-label="Technologies utilisées pour {{ project.title }}"
+                                        >
 
-                                            <li>
-                                                <img
-                                                    src="{{ asset(technology.icon) }}"
-                                                    alt="{{ technology.name }}"
-                                                >
-                                            </li>
+                                            {% for skill in project.skills %}
 
-                                        {% endfor %}
+                                                {% set skill_key = skill.name|lower|trim %}
+                                                {% set skill_icon = skill_icons[skill_key] ?? null %}
 
-                                    </ul>
+                                                <li>
+                                                    {% if skill_icon %}
+                                                        <img
+                                                            src="{{ asset(skill_icon) }}"
+                                                            alt="{{ skill.name }}"
+                                                        >
+                                                    {% else %}
+                                                        <span>
+                                                            {{ skill.name }}
+                                                        </span>
+                                                    {% endif %}
+                                                </li>
+
+                                            {% endfor %}
+
+                                        </ul>
+
+                                    {% endif %}
 
                                     <div
                                         class="project-accordion-links"
-                                        aria-label="Liens du projet {{ project_name }}"
+                                        aria-label="Liens du projet {{ project.title }}"
                                     >
 
-                                        <a
-                                            href="{{ project.github_url }}"
-                                            class="project-link project-link--github"
-                                            aria-label="{{ 'projects.links.github_aria'|trans({
-                                                '%project%': project_name
-                                            }) }}"
-                                        >
+                                        {% if project.githubUrl and project.githubUrl != '#' %}
 
-                                            <img
-                                                src="{{ asset('images/icones/github-icon-2.svg') }}"
-                                                alt=""
-                                                aria-hidden="true"
+                                            <a
+                                                href="{{ project.githubUrl }}"
+                                                class="project-link project-link--github"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="{{ 'projects.links.github_aria'|trans({
+                                                    '%project%': project.title
+                                                }) }}"
                                             >
 
-                                            <span>
-                                                {{ 'projects.links.github'|trans }}
-                                            </span>
+                                                <img
+                                                    src="{{ asset('images/icones/github-icon-2.svg') }}"
+                                                    alt=""
+                                                    aria-hidden="true"
+                                                >
 
-                                        </a>
+                                                <span>
+                                                    {{ 'projects.links.github'|trans }}
+                                                </span>
 
-                                        <a
-                                            href="{{ project.website_url }}"
-                                            class="project-link project-link--website"
-                                            aria-label="{{ 'projects.links.website_aria'|trans({
-                                                '%project%': project_name
-                                            }) }}"
-                                        >
+                                            </a>
 
-                                            <img
-                                                src="{{ asset('images/icones/internet.svg') }}"
-                                                alt=""
-                                                aria-hidden="true"
+                                        {% endif %}
+
+                                        {% if project.demoUrl and project.demoUrl != '#' %}
+
+                                            <a
+                                                href="{{ project.demoUrl }}"
+                                                class="project-link project-link--website"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="{{ 'projects.links.website_aria'|trans({
+                                                    '%project%': project.title
+                                                }) }}"
                                             >
 
-                                            <span>
-                                                {{ 'projects.links.website'|trans }}
-                                            </span>
+                                                <img
+                                                    src="{{ asset('images/icones/internet.svg') }}"
+                                                    alt=""
+                                                    aria-hidden="true"
+                                                >
 
-                                        </a>
+                                                <span>
+                                                    {{ 'projects.links.website'|trans }}
+                                                </span>
+
+                                            </a>
+
+                                        {% endif %}
 
                                     </div>
 
@@ -146,27 +186,37 @@
 
                             </div>
 
-                            <div
-                                class="
-                                    project-accordion-logo
-                                    {% if project.dark_logo_background %}
-                                        project-accordion-logo--black
-                                    {% endif %}
-                                "
-                            >
+                            {% if project.image %}
 
-                                <img
-                                    src="{{ asset(project.logo) }}"
-                                    alt="Logo du projet {{ project_name }}"
+                                <div
+                                    class="
+                                        project-accordion-logo
+                                        {% if project.logoDarkBackground %}
+                                            project-accordion-logo--black
+                                        {% endif %}
+                                    "
                                 >
 
-                            </div>
+                                    <img
+                                        src="{{ asset('images/logos/' ~ project.image) }}"
+                                        alt="Logo du projet {{ project.title }}"
+                                    >
+
+                                </div>
+
+                            {% endif %}
 
                         </div>
 
                     </div>
 
                 </details>
+
+            {% else %}
+
+                <p>
+                    Aucun projet n’est actuellement disponible.
+                </p>
 
             {% endfor %}
 

@@ -107,6 +107,9 @@ class Project
     #[ORM\ManyToMany(targetEntity: Skill::class, inversedBy: 'projects')]
     private Collection $skills;
 
+    #[ORM\Column]
+    private ?bool $logoDarkBackground = null;
+
     public function __construct()
     {
         $this->createdAt = new \DateTimeImmutable();
@@ -310,5 +313,17 @@ class Project
         return $normalizedValue === ''
             ? null
             : $normalizedValue;
+    }
+
+    public function isLogoDarkBackground(): ?bool
+    {
+        return $this->logoDarkBackground;
+    }
+
+    public function setLogoDarkBackground(bool $logoDarkBackground): static
+    {
+        $this->logoDarkBackground = $logoDarkBackground;
+
+        return $this;
     }
 }

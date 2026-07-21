@@ -42,6 +42,7 @@ class ProjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
+
             TextField::new(
                 'title',
                 'Titre'
@@ -93,6 +94,11 @@ class ProjectCrudController extends AbstractCrudController
                 ->setFormTypeOption('expanded', true)
                 ->setFormTypeOption('by_reference', false)
                 ->hideOnIndex(),
+
+            BooleanField::new(
+                'logoDarkBackground',
+                'Logo sur fond sombre'
+            ),
 
             TextField::new(
                 'status',
