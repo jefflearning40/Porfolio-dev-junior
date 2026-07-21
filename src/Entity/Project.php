@@ -7,9 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ProjectRepository::class)]
+#[UniqueEntity(
+    fields: ['slug'],
+    message: 'Un projet utilise déjà ce slug.'
+)]
 class Project
 {
     #[ORM\Id]
@@ -291,6 +296,18 @@ class Project
         return $this;
     }
 
+    public function isLogoDarkBackground(): ?bool
+    {
+        return $this->logoDarkBackground;
+    }
+
+    public function setLogoDarkBackground(bool $logoDarkBackground): static
+    {
+        $this->logoDarkBackground = $logoDarkBackground;
+
+        return $this;
+    }
+
     private static function normalizeSingleLine(string $value): string
     {
         $normalizedValue = preg_replace(
@@ -313,17 +330,5 @@ class Project
         return $normalizedValue === ''
             ? null
             : $normalizedValue;
-    }
-
-    public function isLogoDarkBackground(): ?bool
-    {
-        return $this->logoDarkBackground;
-    }
-
-    public function setLogoDarkBackground(bool $logoDarkBackground): static
-    {
-        $this->logoDarkBackground = $logoDarkBackground;
-
-        return $this;
     }
 }

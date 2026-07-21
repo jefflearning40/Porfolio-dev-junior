@@ -6,9 +6,14 @@ use App\Repository\SkillRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SkillRepository::class)]
+#[UniqueEntity(
+    fields: ['name'],
+    message: 'Cette compétence existe déjà.'
+)]
 class Skill
 {
     #[ORM\Id]
@@ -59,17 +64,6 @@ class Skill
         return $this->name ?? '';
     }
 
-    private static function normalizeSingleLine(string $value): string
-    {
-        $normalizedValue = preg_replace(
-            '/\s+/u',
-            ' ',
-            trim($value)
-        );
-
-        return $normalizedValue ?? trim($value);
-    }
-
     /**
      * @return Collection<int, Project>
      */
@@ -95,5 +89,16 @@ class Skill
         }
 
         return $this;
+    }
+
+    private static function normalizeSingleLine(string $value): string
+    {
+        $normalizedValue = preg_replace(
+            '/\s+/u',
+            ' ',
+            trim($value)
+        );
+
+        return $normalizedValue ?? trim($value);
     }
 }

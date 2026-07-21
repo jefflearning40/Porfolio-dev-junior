@@ -7,6 +7,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
@@ -42,7 +43,6 @@ class ProjectCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-
             TextField::new(
                 'title',
                 'Titre'
@@ -100,10 +100,14 @@ class ProjectCrudController extends AbstractCrudController
                 'Logo sur fond sombre'
             ),
 
-            TextField::new(
+            ChoiceField::new(
                 'status',
                 'Statut'
-            ),
+            )
+                ->setChoices([
+                    'En cours' => 'En cours',
+                    'Terminé' => 'Terminé',
+                ]),
 
             IntegerField::new(
                 'displayOrder',
