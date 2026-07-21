@@ -119,17 +119,27 @@ class ProjectCrudController extends AbstractCrudController
                 'Publié'
             ),
 
-            DateTimeField::new(
+           DateTimeField::new(
                 'createdAt',
-                'Créé le'
-            )
-                ->hideOnForm(),
+                 'Créé le'
+)
+    ->formatValue(
+        static function ($value) {
+            return $value?->format('d/m/Y H:i') ?? '—';
+        }
+    )
+    ->hideOnForm(),
 
-            DateTimeField::new(
+          DateTimeField::new(
                 'updatedAt',
                 'Modifié le'
-            )
-                ->hideOnForm(),
+)
+    ->formatValue(
+        static function ($value) {
+            return $value?->format('d/m/Y H:i') ?? '—';
+        }
+    )
+    ->hideOnForm(),
         ];
     }
 }
