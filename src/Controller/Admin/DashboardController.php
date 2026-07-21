@@ -93,6 +93,12 @@ class DashboardController extends AbstractDashboardController
         );
 
         yield MenuItem::linkTo(
+            ProjectTranslationCrudController::class,
+            'Traductions',
+            'fa fa-language'
+        );
+
+        yield MenuItem::linkTo(
             SkillCrudController::class,
             'Compétences',
             'fa fa-code'

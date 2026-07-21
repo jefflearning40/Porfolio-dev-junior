@@ -128,7 +128,7 @@
                                         aria-label="Liens du projet {{ project.title }}"
                                     >
 
-                                        {% if project.githubUrl and project.githubUrl != '#' %}
+                                        {% if project.githubUrl %}
 
                                             <a
                                                 href="{{ project.githubUrl }}"
@@ -154,7 +154,7 @@
 
                                         {% endif %}
 
-                                        {% if project.demoUrl and project.demoUrl != '#' %}
+                                        {% if project.demoUrl %}
 
                                             <a
                                                 href="{{ project.demoUrl }}"
@@ -198,7 +198,7 @@
                                 >
 
                                     <img
-                                        src="{{ asset('images/logos/' ~ project.image) }}"
+                                        src="{{ asset('uploads/projects/' ~ project.image) }}"
                                         alt="Logo du projet {{ project.title }}"
                                     >
 

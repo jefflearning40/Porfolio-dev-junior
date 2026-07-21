@@ -132,6 +132,17 @@ class Project
     #[ORM\ManyToMany(targetEntity: Skill::class, inversedBy: 'projects')]
     private Collection $skills;
 
+    /**
+     * @var Collection<int, ProjectTranslation>
+     */
+    #[ORM\OneToMany(
+        targetEntity: ProjectTranslation::class,
+        mappedBy: 'project',
+        cascade: ['persist', 'remove'],
+        orphanRemoval: true
+    )]
+    private Collection $translations;
+
     #[ORM\Column]
     private ?bool $logoDarkBackground = null;
 
@@ -139,6 +150,7 @@ class Project
     {
         $this->createdAt = new \DateTimeImmutable();
         $this->skills = new ArrayCollection();
+        $this->translations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -332,16 +344,67 @@ class Project
         return $this;
     }
 
+    /**
+     * @return Collection<int, ProjectTranslation>
+     */
+    public function getTranslations(): Collection
+    {
+        return $this->translations;
+    }
+
+    public function addTranslation(
+        ProjectTranslation $translation
+    ): static {
+        if (!$this->translations->contains($translation)) {
+            $this->translations->add($translation);
+            $translation->setProject($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTranslation(
+        ProjectTranslation $translation
+    ): static {
+        if ($this->translations->removeElement($translation)) {
+            if ($translation->getProject() === $this) {
+                $translation->setProject(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getTranslation(
+        string $locale
+    ): ?ProjectTranslation {
+        $normalizedLocale = mb_strtolower(trim($locale));
+
+        foreach ($this->translations as $translation) {
+            if ($translation->getLocale() === $normalizedLocale) {
+                return $translation;
+            }
+        }
+
+        return null;
+    }
+
     public function isLogoDarkBackground(): ?bool
     {
         return $this->logoDarkBackground;
     }
 
-    public function setLogoDarkBackground(bool $logoDarkBackground): static
-    {
+    public function setLogoDarkBackground(
+        bool $logoDarkBackground
+    ): static {
         $this->logoDarkBackground = $logoDarkBackground;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title ?? 'Projet';
     }
 
     #[ORM\PreUpdate]
@@ -361,8 +424,9 @@ class Project
         return $normalizedValue ?? trim($value);
     }
 
-    private static function normalizeNullableString(?string $value): ?string
-    {
+    private static function normalizeNullableString(
+        ?string $value
+    ): ?string {
         if ($value === null) {
             return null;
         }
