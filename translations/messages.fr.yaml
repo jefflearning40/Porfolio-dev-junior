@@ -5,6 +5,15 @@ navbar:
   contact: Contact
   cv: CV
 
+  admin: Administration
+  admin_aria: Ouvrir le tableau de bord administrateur
+
+  login: Connexion
+  login_aria: Se connecter à l'administration
+
+  logout: Déconnexion
+  logout_aria: Se déconnecter de l'administration
+
 home:
   title: Accueil
   projects: "Mes<br>Projets"

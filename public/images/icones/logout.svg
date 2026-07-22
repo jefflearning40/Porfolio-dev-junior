@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Icône de déconnexion</title>
+  <desc id="desc">Bouclier rouge néon avec une porte et une flèche de sortie.</desc>
+
+  <defs>
+    <filter id="neon" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g fill="none"
+     stroke="#ff2b2b"
+     stroke-width="18"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     filter="url(#neon)">
+
+    <path d="M256 52
+             C310 88 360 108 414 126
+             V248
+             C414 344 350 420 256 468
+             C162 420 98 344 98 248
+             V126
+             C152 108 202 88 256 52Z"/>
+
+    <path d="M210 178H314"/>
+    <path d="M210 178V334"/>
+    <path d="M210 334H314"/>
+
+    <path d="M250 256H358"/>
+    <path d="M318 216L358 256L318 296"/>
+
+    <circle cx="392" cy="118" r="24" fill="#ff2b2b" stroke="#ff6a6a"/>
+  </g>
+</svg>

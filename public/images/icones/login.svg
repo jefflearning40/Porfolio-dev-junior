@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Icône de connexion</title>
+  <desc id="desc">Bouclier cyan néon avec une flèche entrant dans une porte et un point vert.</desc>
+
+  <defs>
+    <filter id="cyanGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="greenGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="cyanStroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8ffcff"/>
+      <stop offset="45%" stop-color="#24ecff"/>
+      <stop offset="100%" stop-color="#00bcd4"/>
+    </linearGradient>
+
+    <radialGradient id="greenFill" cx="35%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#8cff7a"/>
+      <stop offset="55%" stop-color="#24e63d"/>
+      <stop offset="100%" stop-color="#00a61c"/>
+    </radialGradient>
+  </defs>
+
+  <path
+    d="M256 54 C306 88 352 104 398 120 V242
+       C398 338 340 414 256 460
+       C172 414 114 338 114 242 V120
+       C160 104 206 88 256 54Z"
+    fill="none"
+    stroke="url(#cyanStroke)"
+    stroke-width="18"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <path
+    d="M278 188 H336 V324 H278"
+    fill="none"
+    stroke="url(#cyanStroke)"
+    stroke-width="18"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <path
+    d="M194 256 H286"
+    fill="none"
+    stroke="url(#cyanStroke)"
+    stroke-width="18"
+    stroke-linecap="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <path
+    d="M244 216 L286 256 L244 296"
+    fill="none"
+    stroke="url(#cyanStroke)"
+    stroke-width="18"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#cyanGlow)"
+  />
+
+  <circle
+    cx="398"
+    cy="138"
+    r="27"
+    fill="url(#greenFill)"
+    stroke="#8dff8d"
+    stroke-width="5"
+    filter="url(#greenGlow)"
+  />
+</svg>

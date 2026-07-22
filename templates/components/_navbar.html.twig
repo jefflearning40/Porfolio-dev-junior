@@ -92,6 +92,30 @@
                 </a>
             </li>
 
+            {% if is_granted('ROLE_ADMIN') %}
+
+                <li class="mobile-admin-dashboard">
+                    <a href="{{ path('admin') }}">
+                        {{ 'navbar.admin'|trans }}
+                    </a>
+                </li>
+
+                <li class="mobile-logout">
+                    <a href="{{ path('app_logout') }}">
+                        {{ 'navbar.logout'|trans }}
+                    </a>
+                </li>
+
+            {% else %}
+
+                <li class="mobile-login">
+                    <a href="{{ path('app_login') }}">
+                        {{ 'navbar.login'|trans }}
+                    </a>
+                </li>
+
+            {% endif %}
+
             <li class="mobile-github">
                 <a
                     href="https://github.com/jefflearning40"
@@ -146,35 +170,51 @@
 
         </nav>
 
-      {% if is_granted('ROLE_ADMIN') %}
+        {% if is_granted('ROLE_ADMIN') %}
 
-    <a
-        href="{{ path('admin') }}"
-        class="navbar-admin navbar-admin-connected"
-        aria-label="Ouvrir le tableau de bord administrateur"
-    >
-        <img
-            src="{{ asset('images/icones/admin-connected.svg') }}"
-            alt=""
-            aria-hidden="true"
-        >
-    </a>
+            <a
+                href="{{ path('app_logout') }}"
+                class="
+                    navbar-admin-status
+                    navbar-admin-status--connected
+                "
+                aria-label="{{ 'navbar.logout_aria'|trans }}"
+                title="{{ 'navbar.logout'|trans }}"
+            >
+                <img
+                    src="{{ asset('images/icones/logout.svg') }}"
+                    alt=""
+                    aria-hidden="true"
+                >
 
-{% else %}
+                <span>
+                    {{ 'navbar.logout'|trans }}
+                </span>
+            </a>
 
-    <a
-        href="{{ path('app_login') }}"
-        class="navbar-admin"
-        aria-label="Connexion administrateur"
-    >
-        <img
-            src="{{ asset('images/icones/admin.svg') }}"
-            alt=""
-            aria-hidden="true"
-        >
-    </a>
+        {% else %}
 
-{% endif %}
+            <a
+                href="{{ path('app_login') }}"
+                class="
+                    navbar-admin-status
+                    navbar-admin-status--disconnected
+                "
+                aria-label="{{ 'navbar.login_aria'|trans }}"
+                title="{{ 'navbar.login'|trans }}"
+            >
+                <img
+                    src="{{ asset('images/icones/login.svg') }}"
+                    alt=""
+                    aria-hidden="true"
+                >
+
+                <span>
+                    {{ 'navbar.login'|trans }}
+                </span>
+            </a>
+
+        {% endif %}
 
     </nav>
 

@@ -15,6 +15,28 @@
     --color-yellow: #ffd400;
 
     /* ===========================
+   LOGIN
+=========================== */
+
+--color-login-card: rgba(15, 15, 15, 0.96);
+
+--color-login-input: #171717;
+--color-login-input-border: #555;
+
+--color-login-error: #ff3b3b;
+--color-login-error-bg: rgba(255, 59, 59, 0.12);
+
+--color-login-success: #32d466;
+--color-login-success-bg: rgba(50, 212, 102, 0.1);
+
+--shadow-login-card:
+    0 0 24px rgba(0, 183, 232, 0.2),
+    0 8px 0 rgba(0, 122, 159, 0.65);
+
+--shadow-login-focus:
+    0 0 0 3px rgba(0, 212, 255, 0.2);
+
+    /* ===========================
        SURFACES
     =========================== */
 

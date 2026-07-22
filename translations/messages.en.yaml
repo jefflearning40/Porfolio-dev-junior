@@ -1,9 +1,18 @@
 navbar:
   home: Home
   skills: Skills
-  projects: My projects
+  projects: My Projects
   contact: Contact
   cv: Resume
+
+  admin: Administration
+  admin_aria: Open the administration dashboard
+
+  login: Log in
+  login_aria: Log in to the administration area
+
+  logout: Log out
+  logout_aria: Log out of the administration area
 
 home:
   title: Home

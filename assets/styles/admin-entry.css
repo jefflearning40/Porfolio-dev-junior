@@ -1,0 +1,19 @@
+/* ===========================
+   BASE NÉCESSAIRE À L’ADMIN
+=========================== */
+
+@import "./base/variables.css";
+@import "./base/reset.css";
+@import "./base/layout.css";
+
+/* ===========================
+   ADMINISTRATION
+=========================== */
+
+@import "./admin/admin-variables.css";
+@import "./admin/admin.css";
+@import "./admin/dashboard.css";
+@import "./admin/sidebar.css";
+@import "./admin/forms.css";
+@import "./admin/tables.css";
+@import "./admin/admin-responsive.css";

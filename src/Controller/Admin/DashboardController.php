@@ -67,11 +67,11 @@ class DashboardController extends AbstractDashboardController
         ]);
     }
 
-    public function configureAssets(): Assets
-    {
-        return Assets::new()
-            ->addAssetMapperEntry('app');
-    }
+   public function configureAssets(): Assets
+{
+    return Assets::new()
+        ->addCssFile('styles/admin-entry.css');
+}
 
     public function configureDashboard(): Dashboard
     {

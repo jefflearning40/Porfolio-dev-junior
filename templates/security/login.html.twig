@@ -1,90 +1,173 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Connexion | My Portfolio
+    Connexion administrateur | My Portfolio
 {% endblock %}
 
 {% block body %}
 
-<section class="login-page">
+<section
+    class="login-page"
+    aria-labelledby="login-title"
+>
 
     <div class="login-container">
 
-        <h1>Connexion administrateur</h1>
+        <div class="login-card">
 
-        {% if error %}
-            <div
-                class="login-error"
-                role="alert"
-            >
-                {{ error.messageKey|trans(
-                    error.messageData,
-                    'security'
-                ) }}
-            </div>
-        {% endif %}
+            <header class="login-header">
 
-        {% if app.user %}
-            <div class="login-connected">
-                Vous êtes connecté avec
-                {{ app.user.userIdentifier }}.
-
-                <a href="{{ logout_path() }}">
-                    Se déconnecter
-                </a>
-            </div>
-        {% endif %}
-
-        <form
-            method="post"
-            action="{{ path('app_login') }}"
-            data-turbo="false"
-        >
-            <div class="login-field">
-
-                <label for="inputEmail">
-                    Adresse e-mail
-                </label>
-
-                <input
-                    type="email"
-                    value="{{ last_username }}"
-                    name="email"
-                    id="inputEmail"
-                    autocomplete="email"
-                    required
-                    autofocus
+                <img
+                    src="{{ asset('images/icones/login.svg') }}"
+                    class="login-icon"
+                    alt=""
+                    aria-hidden="true"
                 >
 
-            </div>
+                <h1 id="login-title">
+                    Connexion administrateur
+                </h1>
 
-            <div class="login-field">
+                <p>
+                    Accédez à l’espace de gestion du portfolio.
+                </p>
 
-                <label for="inputPassword">
-                    Mot de passe
-                </label>
+            </header>
 
-                <input
-                    type="password"
-                    name="password"
-                    id="inputPassword"
-                    autocomplete="current-password"
-                    required
+            {% if error %}
+
+                <div
+                    class="login-error"
+                    role="alert"
+                >
+                    {{ error.messageKey|trans(
+                        error.messageData,
+                        'security'
+                    ) }}
+                </div>
+
+            {% endif %}
+
+            {% if app.user %}
+
+                <div class="login-connected">
+
+                    <p>
+                        Vous êtes connecté avec :
+                    </p>
+
+                    <strong>
+                        {{ app.user.userIdentifier }}
+                    </strong>
+
+                    <a
+                        href="{{ path('app_logout') }}"
+                        class="login-logout-link"
+                    >
+                        Se déconnecter
+                    </a>
+
+                </div>
+
+            {% else %}
+
+                <form
+                    method="post"
+                    action="{{ path('app_login') }}"
+                    class="login-form"
+                    data-turbo="false"
                 >
 
-            </div>
+                    <div class="login-field">
 
-            <input
-                type="hidden"
-                name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
+                        <label for="inputEmail">
+                            Adresse e-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            value="{{ last_username }}"
+                            name="email"
+                            id="inputEmail"
+                            autocomplete="email"
+                            placeholder="votre@email.fr"
+                            required
+                            autofocus
+                        >
+
+                    </div>
+
+                    <div class="login-field">
+
+                        <label for="inputPassword">
+                            Mot de passe
+                        </label>
+
+                        <div class="login-password-wrapper">
+
+                            <input
+                                type="password"
+                                name="password"
+                                id="inputPassword"
+                                autocomplete="current-password"
+                                placeholder="Votre mot de passe"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="login-password-toggle"
+                                aria-label="Afficher le mot de passe"
+                                aria-pressed="false"
+                                data-password-toggle
+                            >
+                                <img
+                                    src="{{ asset('images/icones/eye.svg') }}"
+                                    alt=""
+                                    aria-hidden="true"
+                                    data-eye-open
+                                >
+
+                                <img
+                                    src="{{ asset('images/icones/eye-closed.svg') }}"
+                                    alt=""
+                                    aria-hidden="true"
+                                    data-eye-closed
+                                    hidden
+                                >
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+                        Se connecter
+                    </button>
+
+                </form>
+
+            {% endif %}
+
+            <a
+                href="{{ path('app_home', {
+                    '_locale': app.request.locale
+                }) }}"
+                class="login-back-link"
             >
+                Retour au portfolio
+            </a>
 
-            <button type="submit">
-                Se connecter
-            </button>
-
-        </form>
+        </div>
 
     </div>
 
