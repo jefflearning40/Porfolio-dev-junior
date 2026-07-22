@@ -3,12 +3,14 @@
 =========================== */
 
 .site-header {
+    box-sizing: border-box;
     width: 100%;
     height: var(--header-height);
     background: var(--color-black);
 }
 
 .navbar {
+    box-sizing: border-box;
     width: 100%;
     height: 100%;
     padding: 0 35px;
@@ -25,9 +27,9 @@
 }
 
 .navbar-logo img {
+    display: block;
     width: auto;
     height: var(--logo-height);
-    display: block;
 }
 
 /* ---------- Menu ---------- */
@@ -96,7 +98,7 @@
     color: var(--color-grey);
 }
 
-/* ---------- Administration ---------- */
+/* ---------- Administration classique ---------- */
 
 .navbar-admin {
     width: var(--admin-link-size);
@@ -117,9 +119,9 @@
 }
 
 .navbar-admin img {
+    display: block;
     width: var(--admin-icon-size);
     height: var(--admin-icon-size);
-    display: block;
 
     transition:
         transform var(--transition-fast),
@@ -152,10 +154,64 @@
     filter: drop-shadow(var(--shadow-admin-icon));
 }
 
+/* ---------- État connexion / déconnexion ---------- */
+
+.navbar-admin-status {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--color-white);
+    font-size: 0.75rem;
+    line-height: 1;
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.navbar-admin-status img {
+    display: block;
+    width: var(--admin-icon-size);
+    height: var(--admin-icon-size);
+    object-fit: contain;
+
+    transition:
+        transform var(--transition-fast),
+        filter var(--transition-fast);
+}
+
+.navbar-admin-status span {
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+.navbar-admin-status:hover {
+    color: var(--color-cyan);
+    transform: translateY(-1px);
+}
+
+.navbar-admin-status:hover img {
+    transform: scale(1.08);
+}
+
+.navbar-admin-status:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 4px;
+    border-radius: var(--radius-small);
+}
+
 /* ---------- Éléments mobiles cachés ---------- */
 
 .menu-toggle,
 .hamburger,
-.mobile-github {
+.mobile-github,
+.mobile-admin-dashboard,
+.mobile-login,
+.mobile-logout {
     display: none;
 }

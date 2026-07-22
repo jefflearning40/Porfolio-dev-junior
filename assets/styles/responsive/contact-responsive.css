@@ -3,6 +3,18 @@
 =========================== */
 
 @media screen and (max-width: 1100px) {
+    .contact-page {
+        padding: 45px 18px 60px;
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    .contact-grid {
+        gap: 28px;
+    }
+
     .privacy-modal {
         padding: 18px;
     }
@@ -27,6 +39,84 @@
 =========================== */
 
 @media screen and (max-width: 768px) {
+    .contact-page {
+        padding: 35px 16px 50px;
+    }
+
+    .contact-header {
+        margin-bottom: 32px;
+    }
+
+    .contact-header h1 {
+        font-size: clamp(2rem, 9vw, 2.6rem);
+    }
+
+    .contact-header p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .contact-form {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 24px 20px;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    .contact-column {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .contact-column > div {
+        margin-bottom: 18px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .contact-form textarea {
+        min-height: 190px;
+    }
+
+    .contact-footer {
+        margin-top: 8px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .contact-privacy {
+        width: 100%;
+    }
+
+    .contact-privacy-field {
+        align-items: flex-start;
+    }
+
+    .contact-submit {
+        width: 100%;
+    }
+
+    .contact-submit > div {
+        width: 100%;
+    }
+
+    .contact-form button[type="submit"] {
+        width: 100%;
+    }
+
     .privacy-modal {
         padding: 12px;
     }
@@ -39,7 +129,6 @@
 
     .privacy-modal-dialog h2 {
         margin-right: 42px;
-
         font-size: 1.6rem;
     }
 
@@ -76,6 +165,58 @@
 =========================== */
 
 @media screen and (max-width: 420px) {
+    .contact-page {
+        padding: 28px 10px 40px;
+    }
+
+    .contact-header {
+        margin-bottom: 26px;
+    }
+
+    .contact-header h1 {
+        font-size: 2rem;
+    }
+
+    .contact-header p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .contact-form {
+        padding: 20px 16px;
+        border-width: 3px;
+    }
+
+    .contact-form label {
+        font-size: 0.9rem;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 11px 12px;
+        font-size: 0.95rem;
+    }
+
+    .contact-form textarea {
+        min-height: 170px;
+    }
+
+    .contact-privacy-field {
+        gap: 7px;
+    }
+
+    .contact-privacy-field label {
+        font-size: 0.88rem;
+        line-height: 1.45;
+    }
+
+    .contact-form button[type="submit"] {
+        min-height: 46px;
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+
     .privacy-modal {
         padding: 8px;
     }
@@ -87,7 +228,6 @@
 
     .privacy-modal-dialog h2 {
         margin-right: 38px;
-
         font-size: 1.4rem;
     }
 
