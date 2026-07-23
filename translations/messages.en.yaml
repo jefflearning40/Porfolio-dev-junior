@@ -65,10 +65,11 @@ projects:
     bpm:
       name: BPM
       description: >
-        Application used to calculate and display
-        beats per minute. This project was created
-        to improve my JavaScript skills
-        and user interactions.
+        Blood pressure self-monitoring application
+        allowing users to record blood pressure and
+        heart rate measurements. This project enabled
+        me to develop form handling, data storage,
+        and clear presentation of medical information.
 
     magscan:
       name: MagScan

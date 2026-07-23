@@ -64,10 +64,12 @@ projects:
     bpm:
       name: BPM
       description: >
-        Application permettant de calculer et d’afficher
-        les battements par minute. Ce projet a été réalisé
-        afin d’approfondir les manipulations JavaScript
-        et les interactions avec l’utilisateur.
+          Application de suivi de l’automesure tensionnelle
+          permettant d’enregistrer les mesures de pression
+          artérielle et de fréquence cardiaque. Ce projet
+          m’a permis de développer la gestion des formulaires,
+          le stockage des données et leur affichage de manière
+          claire et structurée.
 
     magscan:
       name: MagScan

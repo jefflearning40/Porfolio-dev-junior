@@ -42,7 +42,13 @@
                 'react': 'images/icones/react-native-1.svg',
                 'tailwind css': 'images/icones/tailwind-css.svg',
                 'doctrine orm': 'images/icones/doctrine-orm.png',
-                'honeypot': 'images/icones/honeypot.png'
+                'honeypot': 'images/icones/honeypot.png',
+                'bootstrap': 'images/icones/bootstrap-5-1.svg',
+                'docker': 'images/icones/docker-3.svg',
+                'mysql': 'images/icones/mysql-3.svg',
+                'gotenberg': 'images/icones/gotenberg.png',
+                'mailpit': 'images/icones/mailpit.svg',
+                'api rest': 'images/icones/rest-api-icon.svg'
             } %}
 
             {% for project in projects %}
@@ -50,6 +56,16 @@
                 {% set project_id = 'project-' ~ project.id %}
                 {% set normalized_status = project.status|lower|trim %}
                 {% set is_in_progress = normalized_status == 'en cours' %}
+
+                {% set status_translation_keys = {
+                    'en cours': 'projects.status.in_progress',
+                    'terminé': 'projects.status.completed',
+                    'termine': 'projects.status.completed'
+                } %}
+
+                {% set status_translation_key =
+                    status_translation_keys[normalized_status] ?? null
+                %}
 
                 <details
                     name="projects-accordion"
@@ -75,7 +91,11 @@
                                 {% endif %}
                             "
                         >
-                            {{ project.status }}
+                            {% if status_translation_key %}
+                                {{ status_translation_key|trans }}
+                            {% else %}
+                                {{ project.status }}
+                            {% endif %}
                         </span>
 
                     </summary>
@@ -106,14 +126,18 @@
 
                                                 <li>
                                                     {% if skill_icon %}
+
                                                         <img
                                                             src="{{ asset(skill_icon) }}"
                                                             alt="{{ skill.name }}"
                                                         >
+
                                                     {% else %}
+
                                                         <span>
                                                             {{ skill.name }}
                                                         </span>
+
                                                     {% endif %}
                                                 </li>
 
