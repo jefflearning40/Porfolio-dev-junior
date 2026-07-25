@@ -250,6 +250,14 @@ cv:
   pdf_unavailable: >
     Your browser cannot display the PDF document.
 
+  mobile_title: Curriculum Vitae
+
+  mobile_text: >
+    View my resume directly on your device
+    or download it as a PDF.
+
+  open: View Resume
+
 skills:
   page_title: Skills
   title: Technologies and tools
@@ -264,6 +272,7 @@ skills:
     backend: Back-end
     database: Databases
     tools: Tools
+
 errors:
   back_home: Back to home
 
@@ -272,16 +281,18 @@ errors:
     title: Page not found
     description: >
       The requested resource does not exist
-      or is no longer available.  
+      or is no longer available.
+
   403:
     page_title: Access denied
     title: Access denied
     description: >
       You do not have permission
-      to access this resource.    
+      to access this resource.
+
   500:
     page_title: Internal server error
     title: Internal server error
     description: >
       An unexpected error occurred while processing
-      your request. Please try again later.      
+      your request. Please try again later.

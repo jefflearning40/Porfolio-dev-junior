@@ -64,12 +64,12 @@ projects:
     bpm:
       name: BPM
       description: >
-          Application de suivi de l’automesure tensionnelle
-          permettant d’enregistrer les mesures de pression
-          artérielle et de fréquence cardiaque. Ce projet
-          m’a permis de développer la gestion des formulaires,
-          le stockage des données et leur affichage de manière
-          claire et structurée.
+        Application de suivi de l’automesure tensionnelle
+        permettant d’enregistrer les mesures de pression
+        artérielle et de fréquence cardiaque. Ce projet
+        m’a permis de développer la gestion des formulaires,
+        le stockage des données et leur affichage de manière
+        claire et structurée.
 
     magscan:
       name: MagScan
@@ -251,6 +251,14 @@ cv:
   pdf_unavailable: >
     Votre navigateur ne peut pas afficher le document PDF.
 
+  mobile_title: Curriculum Vitae
+
+  mobile_text: >
+    Consultez mon CV directement sur votre appareil
+    ou téléchargez-le au format PDF.
+
+  open: Consulter le CV
+
 skills:
   page_title: Compétences
   title: Technologies et outils
@@ -274,16 +282,18 @@ errors:
     title: Page introuvable
     description: >
       La ressource demandée n'existe pas
-      ou n'est plus disponible. 
+      ou n'est plus disponible.
+
   403:
     page_title: Accès interdit
     title: Accès interdit
     description: >
       Vous ne disposez pas des autorisations nécessaires
-      pour accéder à cette ressource.    
+      pour accéder à cette ressource.
+
   500:
     page_title: Erreur interne
     title: Erreur interne
     description: >
       Une erreur inattendue est survenue lors du traitement
-      de votre demande. Veuillez réessayer ultérieurement.    
+      de votre demande. Veuillez réessayer ultérieurement.

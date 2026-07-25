@@ -139,3 +139,86 @@
     background: var(--color-home-border-hover);
     border-color: var(--color-white);
 }
+/* ===========================
+   VERSION MOBILE DU CV
+=========================== */
+
+.cv-mobile-card {
+    display: none;
+}
+
+.cv-mobile-icon {
+    width: 90px;
+    height: 90px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-white);
+    background: var(--color-home-border);
+
+    border-radius: 18px;
+
+    font-family: var(--font-code);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cv-mobile-card h2 {
+    margin-bottom: 14px;
+
+    color: var(--color-black);
+
+    font-family: var(--font-code);
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.cv-mobile-card p {
+    max-width: 480px;
+
+    margin: 0 auto 24px;
+
+    color: var(--color-dark);
+
+    line-height: 1.6;
+}
+
+.cv-mobile-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.cv-open {
+    min-height: 48px;
+    padding: 10px 22px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--color-white);
+    background: var(--color-black);
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.cv-open:hover {
+    transform: translateY(-3px);
+
+    background: var(--color-dark);
+    border-color: var(--color-white);
+}

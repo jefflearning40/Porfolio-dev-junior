@@ -20,10 +20,6 @@
     }
 }
 
-/* ===========================
-   MOBILE
-=========================== */
-
 @media screen and (max-width: 768px) {
     .cv-page {
         padding: 35px 15px 50px;
@@ -46,13 +42,31 @@
     }
 
     .cv-preview {
-        height: 520px;
+        display: none;
     }
 
     .cv-actions {
-        margin-top: 20px;
+        display: none;
     }
 
+    .cv-mobile-card {
+        padding: 30px 20px;
+
+        display: block;
+
+        text-align: center;
+
+        background: var(--color-white);
+
+        border: 1px solid var(--color-project-tech-border);
+        border-radius: 12px;
+    }
+
+    .cv-mobile-actions {
+        flex-direction: column;
+    }
+
+    .cv-open,
     .cv-download {
         width: 100%;
     }

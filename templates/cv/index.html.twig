@@ -40,6 +40,43 @@
 
             </div>
 
+            <div class="cv-mobile-card">
+
+                <div class="cv-mobile-icon" aria-hidden="true">
+                    PDF
+                </div>
+
+                <h2>
+                    {{ 'cv.mobile_title'|trans }}
+                </h2>
+
+                <p>
+                    {{ 'cv.mobile_text'|trans }}
+                </p>
+
+                <div class="cv-mobile-actions">
+
+                    <a
+                        href="{{ asset('documents/cv-jean-francois.pdf') }}"
+                        class="cv-open"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ 'cv.open'|trans }}
+                    </a>
+
+                    <a
+                        href="{{ asset('documents/cv-jean-francois.pdf') }}"
+                        class="cv-download"
+                        download
+                    >
+                        {{ 'cv.download'|trans }}
+                    </a>
+
+                </div>
+
+            </div>
+
             <div class="cv-actions">
 
                 <a
